@@ -18,7 +18,7 @@ To get started with this project, clone the repository and install the dependenc
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/kabserve.git
+git clone https://github.com/your-username/spezi.git
 ```
 
 ### 2. Install Dependencies
