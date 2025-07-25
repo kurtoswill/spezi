@@ -20,7 +20,6 @@ const NavbarItem = ({
             <Link href={href}>
                 {children}
             </Link>
-
         </Button>
     )
 }
