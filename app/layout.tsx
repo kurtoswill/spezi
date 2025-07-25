@@ -20,10 +20,12 @@ export default function RootLayout({
         <html lang="en" className={manrope.variable}>
             <body className="font-sans antialiased">
                 <Navbar />
-                    <main className="px-[200px]">
+                    <main className="px-8 md:px-32 lg:px-[200px]">
                         {children}
                     </main>
             </body>
         </html>
     );
 }
+
+

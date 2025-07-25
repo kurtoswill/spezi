@@ -28,23 +28,24 @@ const NavbarItem = ({
 const NavbarItems = [
     {href: "/", children: "Home"},
     {href: "#features", children: "Features"},
-    {href: "#contact", children: "Pricing"},
-    {href: "/contact/", children: "Contact"},
+    {href: "#pricing", children: "Pricing"},
+    {href: "/contact", children: "Contact"},
     {href: "/about", children: "About Us"},
 ]
 
 export const Navbar = () => {
     return (
-        <div className="flex justify-between items-center sticky px-[200px] shadow py-[20px]">
+        <div className="flex justify-between items-center sticky px-8 md:px-32 lg:px-[200px] shadow py-5">
             {/*Logo*/}
             <Image
                 src="/logos/spezi-logo-2.png"
-                alt="logo"
+                alt="Spezi logo"
                 width={100} height={100}
+                priority
             />
 
             {/*NavLinks*/}
-            <div>
+            <nav role="navigation" aria-label="Main navigation">
                 {NavbarItems.map((item) => (
                     <NavbarItem
                         key={item.href}
@@ -53,7 +54,7 @@ export const Navbar = () => {
                         {item.children}
                     </NavbarItem>
                 ))}
-            </div>
+            </nav>
 
             <Button
                 variant={"default"}
