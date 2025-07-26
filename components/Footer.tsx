@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Footer = () => {
     return (
-        <footer className="mt-16">
+        <footer className="my-16">
             <div className="flex gap-5 items-center justify-end">
                 <Image src="/icons/fb.svg" alt="fb"
                        width={30} height={30}
