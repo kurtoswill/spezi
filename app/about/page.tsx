@@ -172,7 +172,7 @@ const Page = () => {
         </div>
       </header>
       <section>
-        {/* TODO: Add company statistics or infographics */}
+        {/* TODO: Add company infographics */}
         <figure></figure>
         <figure></figure>
           <h2>Vision</h2>
