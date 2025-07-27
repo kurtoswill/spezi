@@ -103,6 +103,7 @@ export default function Home() {
         <Features />
 
         {/*How it Works*/}
+        <Instructions />
 
         <Pricing />
       </div>

@@ -140,7 +140,7 @@ const Page = () => {
   ];
 
   return (
-    <div className="text-[#232C4F] px-4 mb-52">
+    <div className="px-4 mb-52">
       <header>
         <div className="font-extrabold font-sora text-3xl text-center">
           Behind Spezi: The People, Purpose, and Principles
