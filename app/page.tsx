@@ -66,7 +66,11 @@ export default function Home() {
         <DevelopmentPopup isOpen={showPopup} onClose={handleClosePopup} />
 
         <div>
+          {/*Hero Section*/}
+
           <Features />
+
+          {/*How it Works*/}
 
           <Pricing />
         </div>
