@@ -8,9 +8,9 @@ interface NavbarItemProps {
 }
 
 const NavbarItem = ({
-    href,
-    children
-}: NavbarItemProps) => {
+                        href,
+                        children
+                    }: NavbarItemProps) => {
     return (
         <Button
             asChild
@@ -34,7 +34,7 @@ const NavbarItems = [
 
 export const Navbar = () => {
     return (
-        <div className="flex justify-between items-center sticky px-8 md:px-32 lg:px-[200px] shadow py-5">
+        <div className="fixed top-0 left-0 right-0 z-50 bg-white flex justify-between items-center px-8 md:px-32 lg:px-[200px] shadow py-5">
             {/*Logo*/}
             <Image
                 src="/logos/spezi-logo-2.png"
@@ -55,13 +55,20 @@ export const Navbar = () => {
                 ))}
             </nav>
 
-            <Button
-                variant={"default"}
-                className="p-6"
-            >
-                Download Extension
-            </Button>
+            <div className="flex gap-5">
+                <Button
+                    variant={"outline"}
+                    className="p-[22px]"
+                >
+                    Sign in
+                </Button>
+                <Button
+                    variant={"default"}
+                    className="p-6"
+                >
+                    Download Extension
+                </Button>
+            </div>
         </div>
     );
 };
-
