@@ -151,7 +151,7 @@ const Page = () => {
             <p>
               Spezi is a browser-based communication assistant built
               specifically for English as a Second Language (ESL)
-              professionals. We believe that great ideas shouldn’t be lost in
+              professionals.We believe that great ideas shouldn’t be lost in
               translation — that’s why we created a tool that supports
               confident, clear communication during and after your online
               meetings. Whether you’re pitching to clients, collaborating with
