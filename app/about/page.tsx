@@ -142,7 +142,7 @@ const Page = () => {
   return (
     <div className="mb-52">
       <header>
-        <div className="font-extrabold font-sora text-3xl text-center mt-3 max-w-[600px] mx-auto">
+        <div className="font-extrabold font-sora text-3xl text-center max-w-[600px] mx-auto">
           Behind Spezi: The People, Purpose, and Principles
         </div>
         <div className="flex mt-18 items-center justify-between gap-12">
