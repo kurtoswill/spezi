@@ -38,7 +38,7 @@ export const Features = () => {
                             Post-meeting recaps
                         </h2>
                         <p className="text-lg leading-relaxed">
-                            After each meeting, Spezi generates a detailed yet easy-to-understand summary of your communication performance. You'll get targeted suggestions on pronunciation, clarity, delivery, and pacing. These recaps help you identify specific areas for improvement and track your progress over time, without needing to sift through full recordings.
+                            After each meeting, Spezi generates a detailed yet easy-to-understand summary of your communication performance. You&#39;ll get targeted suggestions on pronunciation, clarity, delivery, and pacing. These recaps help you identify specific areas for improvement and track your progress over time, without needing to sift through full recordings.
                         </p>
                     </div>
                 </div>
