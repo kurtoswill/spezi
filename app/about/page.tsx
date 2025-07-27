@@ -140,13 +140,13 @@ const Page = () => {
   ];
 
   return (
-    <div className="px-4 mb-52">
+    <div className="mb-52">
       <header>
-        <div className="font-extrabold font-sora text-3xl text-center">
+        <div className="font-extrabold font-sora text-3xl text-center mt-3 max-w-[600px] mx-auto">
           Behind Spezi: The People, Purpose, and Principles
         </div>
-        <div className="flex">
-          <div>
+        <div className="flex mt-18 items-center justify-between gap-12">
+          <div className="flex gap-5 flex-col max-w-2xl">
             <div className="font-bold text-[40px]">About Us</div>
             <p>
               Spezi is a browser-based communication assistant built
@@ -164,30 +164,46 @@ const Page = () => {
           </div>
           <Image
             src="/images/placeholder.jpg"
-            width={600}
-            height={400}
-            className="max-w-[600px] max-h-[400px] object-cover rounded-[10px] shadow-xl flex-shrink-0"
-            alt=""
+            width={400}
+            height={300}
+            className="max-w-[400px] max-h-[300px] object-cover rounded-[10px] shadow-xl flex-shrink-0"
+            alt="placeholder"
           />
         </div>
       </header>
-      <section>
-        <figure></figure>
-        <figure></figure>
-        <h2>Vision</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-        <h2>Mission</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
+      <section className="flex mt-52 items-center justify-between gap-40">
+        <div className="flex-shrink-0 flex items-center gap-3">
+          <Image
+            src="/images/placeholder.jpg"
+            width={280}
+            height={540}
+            className="w-[200px] h-[390px] object-cover rounded-[10px] shadow-xl flex-shrink-0"
+            alt=""
+          />
+          <Image
+            src="/images/placeholder.jpg"
+            width={280}
+            height={461}
+            className="w-[200px] h-[350px] object-cover rounded-[10px] shadow-xl flex-shrink-0 "
+            alt=""
+          />
+        </div>
+        <div className="flex gap-5 flex-col max-w-2xl">
+          <div className="font-bold text-[40px]">Vision</div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          <div className="font-bold text-[40px]">Mission</div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </div>
       </section>
 
       {/* Our Story Section */}
@@ -208,13 +224,17 @@ const Page = () => {
           </p>
         </div>
 
-        <div className="w-[600px] h-[400px] bg-[#232C4F] rounded-[10px] shadow-xl flex-shrink-0">
-          {/*Image Placeholder*/}
-        </div>
+        <Image
+          src="/images/placeholder.jpg"
+          width={400}
+          height={300}
+          className="max-w-[400px] max-h-[300px] object-cover rounded-[10px] shadow-xl flex-shrink-0"
+          alt="placeholder"
+        />
       </div>
 
       {/* Team Section */}
-      <div className="mt-24 mb-16">
+      <div className="mt-52 mb-16">
         <div className="text-center mb-12">
           <h2 className="text-[40px] font-bold text-[#232C4F] mb-4">
             Meet Our Team

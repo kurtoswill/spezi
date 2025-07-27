@@ -100,8 +100,8 @@ export default function Home() {
         <Landing />
         <Features />
         <Instructions />
-        <Download />
         <Pricing />
+        <Download />
       </div>
     </>
   );
