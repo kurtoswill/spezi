@@ -151,7 +151,7 @@ const Page = () => {
             <p>
               Spezi is a browser-based communication assistant built
               specifically for English as a Second Language (ESL)
-              professionals. We believe that great ideas shouldn’t be lost in
+              professionals.We believe that great ideas shouldn’t be lost in
               translation — that’s why we created a tool that supports
               confident, clear communication during and after your online
               meetings. Whether you’re pitching to clients, collaborating with
@@ -167,27 +167,28 @@ const Page = () => {
             width={600}
             height={400}
             className="max-w-[600px] max-h-[400px] object-cover rounded-[10px] shadow-xl flex-shrink-0"
-            alt=""
+            alt="Spezi team collaboration"
           />
         </div>
       </header>
       <section>
+        {/* TODO: Add company statistics or infographics */}
         <figure></figure>
         <figure></figure>
-        <h2>Vision</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-        <h2>Mission</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
+          <h2>Vision</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          <h2>Mission</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
       </section>
 
       {/* Our Story Section */}
