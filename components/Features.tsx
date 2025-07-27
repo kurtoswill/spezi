@@ -1,6 +1,6 @@
 export const Features = () => {
     return (
-        <div className="text-[#232C4F] mt-40  mx-auto px-6">
+        <div className="text-[#232C4F] mt-40 mx-auto" id="features">
             <div className="flex flex-col gap-5 items-center text-center mb-40">
                 <h1 className="text-[40px] font-bold leading-tight">
                     Enhance How You Speak, Effortlessly
@@ -13,7 +13,7 @@ export const Features = () => {
             <div className="space-y-32">
                 {/* Real-time feedback */}
                 <div className="flex justify-between items-center">
-                    <div className="max-w-2xl flex flex-col gap-6">
+                    <div className="max-w-3xl flex flex-col gap-6">
                         <h2 className="text-[40px] font-bold leading-tight">
                             Real-time feedback
                         </h2>
@@ -33,7 +33,7 @@ export const Features = () => {
                         {/*Post-meeting recaps visualization*/}
                     </div>
 
-                    <div className="max-w-2xl flex flex-col gap-6">
+                    <div className="max-w-3xl flex flex-col gap-6">
                         <h2 className="text-[40px] font-bold leading-tight">
                             Post-meeting recaps
                         </h2>
@@ -45,7 +45,7 @@ export const Features = () => {
 
                 {/* Trend tracking overtime */}
                 <div className="flex justify-between items-center">
-                    <div className="max-w-2xl flex flex-col gap-6">
+                    <div className="max-w-3xl flex flex-col gap-6">
                         <h2 className="text-[40px] font-bold leading-tight">
                             Trend tracking overtime
                         </h2>
@@ -65,7 +65,7 @@ export const Features = () => {
                         {/*Personalized improvement plans visualization*/}
                     </div>
 
-                    <div className="max-w-2xl flex flex-col gap-6">
+                    <div className="max-w-3xl flex flex-col gap-6">
                         <h2 className="text-[40px] font-bold leading-tight">
                             Personalized improvement plans
                         </h2>

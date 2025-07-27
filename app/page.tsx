@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import {Features} from "@/components/Features";
+import {Pricing} from "@/components/Pricing";
 
 const DevelopmentPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   if (!isOpen) return null;
@@ -66,6 +67,8 @@ export default function Home() {
 
         <div>
           <Features />
+
+          <Pricing />
         </div>
       </>
   );
