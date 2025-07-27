@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Landing } from "@/components/Landing";
 import { Instructions } from "@/components/Instructions";
+import { Download } from "@/components/Download";
 import { Features } from "@/components/Features";
 import { Pricing } from "@/components/Pricing";
 
@@ -97,14 +98,9 @@ export default function Home() {
 
       <div>
         <Landing />
-
-        {/*Hero Section*/}
-
         <Features />
-
-        {/*How it Works*/}
         <Instructions />
-
+        <Download />
         <Pricing />
       </div>
     </>

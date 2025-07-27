@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 
 interface SocialLinks {
   facebook?: string;
@@ -151,15 +151,15 @@ const Page = () => {
             <p>
               Spezi is a browser-based communication assistant built
               specifically for English as a Second Language (ESL)
-              professionals.We believe that great ideas shouldn't be lost in
-              translation — that's why we created a tool that supports
+              professionals. We believe that great ideas shouldn’t be lost in
+              translation — that’s why we created a tool that supports
               confident, clear communication during and after your online
-              meetings. Whether you're pitching to clients, collaborating with
+              meetings. Whether you’re pitching to clients, collaborating with
               global teams, or leading virtual classrooms, Spezi gives you
               real-time and post-call feedback tailored to your unique voice,
-              accent, and communication style. We're a small, passionate team of
+              accent, and communication style. We’re a small, passionate team of
               developers, designers, and language learners committed to making
-              global communication more inclusive and empowering for everyone.
+              global communication more inclusive and empowering for everyone
             </p>
           </div>
           <Image

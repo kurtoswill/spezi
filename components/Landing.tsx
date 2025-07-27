@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 export const Landing = () => {
   return (
     <div className="flex justify-between gap-10 items-center">
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
         <div className="font-extrabold font-sora text-3xl">
           Speak English Professionally and Confidently
         </div>
@@ -20,7 +20,9 @@ export const Landing = () => {
             Watch Demo <ArrowRight />
           </Button>
         </div>
-        <p>Trusted by professionals across 20+ countries </p>
+        <p className="text-xs">
+          Trusted by professionals across 20+ countries{" "}
+        </p>
       </div>
       <div className="flex-shrink-0 flex items-center gap-3">
         <Image
