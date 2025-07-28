@@ -1,24 +1,24 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { AlignJustify } from "lucide-react";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { AlignJustify, X } from "lucide-react";
+import { useState } from "react";
 
 interface NavbarItemProps {
   href: string;
   children: React.ReactNode;
+  handleLinkClick?: () => void;
 }
 
-const NavbarItem = ({ href, children }: NavbarItemProps) => {
+const NavbarItem = ({ href, children, handleLinkClick }: NavbarItemProps) => {
   return (
-    <Button asChild className="text-base" variant={"link"}>
+    <Button
+      asChild
+      className="text-base"
+      variant={"link"}
+      onClick={handleLinkClick}
+    >
       <Link href={href}>{children}</Link>
     </Button>
   );
@@ -33,52 +33,83 @@ const NavbarItems = [
 ];
 
 export const Navbar = () => {
-  return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-white flex justify-between items-center px-8 md:px-32 lg:px-[200px] shadow py-5">
-      {/*Logo*/}
-      <Image
-        src="/logos/spezi-logo-2.png"
-        alt="Spezi logo"
-        width={100}
-        height={100}
-        priority
-      />
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const handleTriggerClick = () => {
+    setIsSheetOpen((prev) => (prev = !prev));
+  };
 
-      {/*NavLinks*/}
-      <div className="hidden lg:flex lg:items-center">
-        <nav role="navigation" aria-label="Main navigation">
+  const handleLinkClick = () => {
+    setIsSheetOpen(false);
+  };
+
+  return (
+    <>
+      <div
+        className={`${
+          isSheetOpen ? "flex" : "hidden"
+        } flex-col fixed items-start pt-30 pb-15 px-6 w-[100vw] h-[100vh] inset-0 bg-white z-10 justify-between`}
+      >
+        <div className="flex flex-col gap-5 items-start">
           {NavbarItems.map((item) => (
-            <NavbarItem key={item.href} href={item.href}>
+            <NavbarItem
+              key={item.href}
+              href={item.href}
+              handleLinkClick={handleLinkClick}
+            >
               {item.children}
             </NavbarItem>
           ))}
-        </nav>
+        </div>
 
-        <div className="flex gap-5">
-          <Button variant={"outline"} className="p-[22px]">
+        <div className="flex flex-col gap-5 w-full">
+          <Button variant={"outline"} className="w-full p-7">
             Sign in
           </Button>
-          <Button variant={"default"} className="p-6">
+          <Button variant={"default"} className="w-full p-7">
             Download Extension
           </Button>
         </div>
       </div>
-      <div className="flex lg:hidden">
-        {/* <Sheet>
-          <SheetTrigger>
-            <AlignJustify />
-          </SheetTrigger>
-          <SheetContent className="w-[400px] sm:w-[540px]">
-            <SheetHeader>
-              <SheetTitle>Are you absolutely sure?</SheetTitle>
-              <SheetDescription>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
-              </SheetDescription>
-            </SheetHeader>
-          </SheetContent>
-        </Sheet> */}
+
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white flex justify-between items-center px-8 md:px-32 lg:px-[200px] shadow py-5">
+        {/*Logo*/}
+        <Link href="/">
+          <Image
+            src="/logos/spezi-logo-2.png"
+            alt="Spezi logo"
+            width={100}
+            height={100}
+            priority
+          />
+        </Link>
+
+        {/*NavLinks*/}
+        <div className="hidden lg:flex lg:items-center">
+          <nav role="navigation" aria-label="Main navigation">
+            {NavbarItems.map((item) => (
+              <NavbarItem
+                key={item.href}
+                href={item.href}
+                handleLinkClick={handleLinkClick}
+              >
+                {item.children}
+              </NavbarItem>
+            ))}
+          </nav>
+
+          <div className="flex gap-5">
+            <Button variant={"outline"} className="p-[22px]">
+              Sign in
+            </Button>
+            <Button variant={"default"} className="p-6">
+              Download Extension
+            </Button>
+          </div>
+        </div>
+        <div className="flex flex-col lg:hidden" onClick={handleTriggerClick}>
+          {isSheetOpen ? <X /> : <AlignJustify />}
+        </div>
       </div>
-    </div>
+    </>
   );
 };

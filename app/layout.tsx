@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className="font-sans antialiased text-[#232C4F]">
         <Toaster position="top-center" />
         <Navbar />
-        <main className="px-6 md:px-24 lg:px-[150px] pt-38  2xl:max-w-screen-2xl 2xl:mx-auto">
+        <main className="px-6 md:px-24 lg:px-[150px] pt-38 2xl:max-w-screen-2xl 2xl:mx-auto">
           {children}
           <Footer />
         </main>

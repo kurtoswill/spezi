@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export const Landing = () => {
   return (
-    <div className="flex flex-col lg:flex-row justify-between gap-10 items-center">
+    <div className="mt-2 flex flex-col lg:flex-row justify-between gap-10 items-center">
       <div className="flex flex-col text-center items-center justify-center lg:items-start lg:justify-start lg:text-left gap-4">
         <div className="font-extrabold font-sora text-3xl">
           Speak English Professionally and Confidently
