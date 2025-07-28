@@ -100,12 +100,10 @@ export default function Home() {
 
       <div>
         <Landing />
-        <Features />
-        <Instructions />
-        <Pricing />
-        {/* <div ref={downloadsRef}> */}
+        {/* <Features /> */}
+        {/* <Instructions /> */}
+        {/* <Pricing /> */}
         <Download />
-        {/* </div> */}
       </div>
     </>
   );

@@ -140,14 +140,14 @@ const Page = () => {
   ];
 
   return (
-    <div className="mb-52">
+    <div className="mb-52 flex flex-col gap-30 lg:gap-52">
       <header>
-        <div className="font-extrabold font-sora text-[48px] leading-tight text-center max-w-4xl mx-auto">
-          Behind Spezi: <br/> The People, Purpose, and Principles
+        <div className="font-extrabold font-sora text-3xl text-center max-w-[600px] mx-auto hidden lg:flex">
+          Behind Spezi: The People, Purpose, and Principles
         </div>
-        <div className="flex mt-18 items-center justify-center gap-40">
+        <div className="flex flex-col text-center mt-5 lg:flex-row lg:text-left lg:mt-18 items-center justify-between gap-12 ">
           <div className="flex gap-5 flex-col max-w-2xl">
-            <div className="font-bold text-[40px]">About Us</div>
+            <div className="font-bold text-[35px] lg:text-[40px]">About Us</div>
             <p>
               <b>Spezi</b> is a browser-based communication assistant built
               specifically for <b>English as a Second Language (ESL) professionals.</b> We believe that great ideas shouldn’t be lost in
@@ -164,37 +164,37 @@ const Page = () => {
             src="/images/placeholder.jpg"
             width={400}
             height={300}
-            className="max-w-[400px] max-h-[300px] object-cover rounded-[10px] shadow-xl flex-shrink-0"
+            className="w-[350px] h-[262.5px] lg:w-[400px] lg:h-[300px] object-cover rounded-[10px] shadow-xl flex-shrink-0"
             alt="placeholder"
           />
         </div>
       </header>
-      <section className="flex mt-52 items-center justify-center gap-40">
-        <div className="flex-shrink-0 flex items-center gap-3">
+      <section className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-48">
+        <div className="flex items-center gap-3">
           <Image
             src="/images/placeholder.jpg"
             width={280}
             height={540}
-            className="w-[200px] h-[390px] object-cover rounded-[10px] shadow-xl flex-shrink-0"
+            className="w-[130px] h-[262px]  lg:w-[200px] lg:h-[390px] object-cover rounded-[10px] shadow-xl"
             alt=""
           />
           <Image
             src="/images/placeholder.jpg"
             width={280}
             height={461}
-            className="w-[200px] h-[350px] object-cover rounded-[10px] shadow-xl flex-shrink-0 "
+            className="w-[130px] h-[220px] lg:w-[200px] lg:h-[350px] object-cover rounded-[10px] shadow-xl"
             alt=""
           />
         </div>
-        <div className="flex gap-5 flex-col max-w-2xl">
-          <div className="font-bold text-[40px]">Vision</div>
+        <div className="flex gap-5 flex-col max-w-2xl text-center lg:text-left shrink-[3]">
+          <div className="font-bold text-[35px] lg:text-[40px]">Vision</div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </p>
-          <div className="font-bold text-[40px]">Mission</div>
+          <div className="font-bold text-[35px] lg:text-[40px]">Mission</div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -205,7 +205,7 @@ const Page = () => {
       </section>
 
       {/* Our Story Section */}
-      <div className="flex mt-52 items-center justify-center gap-40">
+      {/* <div className="flex items-center justify-between gap-12">
         <div className="flex gap-5 flex-col max-w-2xl">
           <h1 className="text-[40px] font-bold">Our Story</h1>
           <p>
@@ -220,19 +220,19 @@ const Page = () => {
             crafted Spezi to be an accessible, real-time coaching tool no
             seminars or expensive lessons required.
           </p>
-        </div>
+        </div> */}
 
-        <Image
+      {/* <Image
           src="/images/placeholder.jpg"
           width={400}
           height={300}
           className="max-w-[400px] max-h-[300px] object-cover rounded-[10px] shadow-xl flex-shrink-0"
           alt="placeholder"
         />
-      </div>
+      </div> */}
 
       {/* Team Section */}
-      <div className="mt-52 mb-16">
+      {/* <div className="mb-16">
         <div className="text-center mb-12">
           <h2 className="text-[40px] font-bold text-[#232C4F] mb-4">
             Meet Our Team
@@ -254,7 +254,7 @@ const Page = () => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
