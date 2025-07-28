@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Landing } from "@/components/Landing";
 import { Instructions } from "@/components/Instructions";
 import { Download } from "@/components/Download";
 import { Features } from "@/components/Features";
 import { Pricing } from "@/components/Pricing";
+import { useInView } from "react-intersection-observer";
 
 const DevelopmentPopup = ({
   isOpen,
@@ -79,6 +80,7 @@ const DevelopmentPopup = ({
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
+  // const { ref: downloadsRef, inView: isDownloadsVisible } = useInView();
 
   useEffect(() => {
     const hasSeenPopup = sessionStorage.getItem("hasSeenDevelopmentPopup");
@@ -100,8 +102,10 @@ export default function Home() {
         <Landing />
         <Features />
         <Instructions />
-        <Download />
         <Pricing />
+        {/* <div ref={downloadsRef}> */}
+        <Download />
+        {/* </div> */}
       </div>
     </>
   );

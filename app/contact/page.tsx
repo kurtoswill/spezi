@@ -45,7 +45,7 @@ const Page = () => {
   };
 
   return (
-    <div className="max-w-[2000px] mx-auto flex items-start justify-center gap-52 mt-[60px] mb-32 px-4">
+    <div className="max-w-[2000px] mx-auto flex items-start justify-center gap-52 mb-32 px-4">
       {/* Left Side - Contact Form */}
       <div className="flex flex-col text-center gap-10 w-full max-w-md">
         <div className="flex flex-col gap-5">
