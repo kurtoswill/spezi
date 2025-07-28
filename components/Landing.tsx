@@ -5,18 +5,26 @@ import { ArrowRight } from "lucide-react";
 export const Landing = () => {
   return (
     <div className="flex justify-between gap-10 items-center">
-      <div className="flex flex-col gap-4">
-        <div className="font-extrabold font-sora text-3xl">
+      <div className="flex flex-col gap-4 max-w-3xl">
+        <div className="font-black font-sora text-[48px] leading-tight">
           Speak English Professionally and Confidently
         </div>
-        <p>
+        <p className="font-manrope font-medium text-xl mb-5">
           Built for English as a Second Language (ESL) professionals, Spezi
           gives you real-time, accent-aware feedback to help you communicate
           clearly in global meetings.
         </p>
-        <div className="flex gap-3">
-          <Button className="p-7 hover:bg-[#11141f]">Download Extension</Button>
-          <Button className="p-7 border hover:bg-[#dadada] hover:border-white border-[#232C4F] bg-white text-[#232C4F]">
+        <div className="flex gap-3 mb-5">
+          <Button 
+            className="p-6"
+            variant="default"
+          >
+            Download Extension
+          </Button>
+          <Button 
+            className="p-5.5"
+            variant="outline"
+          >
             Watch Demo <ArrowRight />
           </Button>
         </div>
