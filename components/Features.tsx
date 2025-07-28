@@ -13,7 +13,7 @@ export const Features = () => {
 
       <div className="space-y-32">
         {/* Real-time feedback */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-center gap-40 items-center">
           <div className="max-w-3xl flex flex-col gap-6">
             <h2 className="text-[40px] font-bold leading-tight">
               Real-time feedback
@@ -34,7 +34,7 @@ export const Features = () => {
         </div>
 
         {/* Post-meeting recaps */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-center gap-40 items-center">
           <div className="w-[520px] h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
             {/*Post-meeting recaps visualization*/}
           </div>
@@ -55,7 +55,7 @@ export const Features = () => {
         </div>
 
         {/* Trend tracking overtime */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-center gap-40 items-center">
           <div className="max-w-3xl flex flex-col gap-6">
             <h2 className="text-[40px] font-bold leading-tight">
               Trend tracking overtime
@@ -76,7 +76,7 @@ export const Features = () => {
         </div>
 
         {/* Personalized improvement plans */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-center gap-40 items-center">
           <div className="w-[520px] h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
             {/*Personalized improvement plans visualization*/}
           </div>

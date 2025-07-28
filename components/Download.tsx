@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Download = () => {
   return (
-    <div className="mt-25 -mx-6 md:-mx-24 lg:-mx-[150px] w-[100vw] bg-[#F9FAFB] flex flex-col gap-4 p-40 justify-center items-center text-center">
+    <div className="mt-25 -mx-6 md:-mx-24 lg:-mx-[150px] w-[100vw] bg-[#F9FAFB] flex flex-col gap-10 p-20 justify-center items-center text-center">
       <Image
         src="/logos/spezi-logo-1.png"
         alt="Spezi logo"
@@ -12,8 +12,13 @@ export const Download = () => {
         priority
       />
       <div className="font-bold text-[40px]">Start Speaking Like a Pro</div>
-      <p>Install Spezi and get your first feedback in under 2 minutes.</p>
-      <Button className="p-7 hover:bg-[#11141f]">Download Extension</Button>
+        <p>Install Spezi and get your first feedback in under 2 minutes.</p>
+          <Button 
+            className="p-6"
+            variant="default"
+          >
+            Download Extension
+          </Button>
     </div>
   );
 };

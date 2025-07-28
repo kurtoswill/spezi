@@ -142,21 +142,19 @@ const Page = () => {
   return (
     <div className="mb-52">
       <header>
-        <div className="font-extrabold font-sora text-3xl text-center max-w-[600px] mx-auto">
-          Behind Spezi: The People, Purpose, and Principles
+        <div className="font-extrabold font-sora text-[48px] leading-tight text-center max-w-4xl mx-auto">
+          Behind Spezi: <br/> The People, Purpose, and Principles
         </div>
-        <div className="flex mt-18 items-center justify-between gap-12">
+        <div className="flex mt-18 items-center justify-center gap-40">
           <div className="flex gap-5 flex-col max-w-2xl">
             <div className="font-bold text-[40px]">About Us</div>
             <p>
-              Spezi is a browser-based communication assistant built
-              specifically for English as a Second Language (ESL)
-              professionals.We believe that great ideas shouldn’t be lost in
+              <b>Spezi</b> is a browser-based communication assistant built
+              specifically for <b>English as a Second Language (ESL) professionals.</b> We believe that great ideas shouldn’t be lost in
               translation — that’s why we created a tool that supports
               confident, clear communication during and after your online
               meetings. Whether you’re pitching to clients, collaborating with
-              global teams, or leading virtual classrooms, Spezi gives you
-              real-time and post-call feedback tailored to your unique voice,
+              global teams, or leading virtual classrooms,<b>Spezi gives you real-time and post-call feedback</b> tailored to your unique voice,
               accent, and communication style. We’re a small, passionate team of
               developers, designers, and language learners committed to making
               global communication more inclusive and empowering for everyone
@@ -171,7 +169,7 @@ const Page = () => {
           />
         </div>
       </header>
-      <section className="flex mt-52 items-center justify-between gap-40">
+      <section className="flex mt-52 items-center justify-center gap-40">
         <div className="flex-shrink-0 flex items-center gap-3">
           <Image
             src="/images/placeholder.jpg"
@@ -207,7 +205,7 @@ const Page = () => {
       </section>
 
       {/* Our Story Section */}
-      <div className="flex mt-52 items-center justify-between gap-12">
+      <div className="flex mt-52 items-center justify-center gap-40">
         <div className="flex gap-5 flex-col max-w-2xl">
           <h1 className="text-[40px] font-bold">Our Story</h1>
           <p>
