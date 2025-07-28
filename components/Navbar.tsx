@@ -1,6 +1,15 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { AlignJustify } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 interface NavbarItemProps {
   href: string;
@@ -36,21 +45,39 @@ export const Navbar = () => {
       />
 
       {/*NavLinks*/}
-      <nav role="navigation" aria-label="Main navigation">
-        {NavbarItems.map((item) => (
-          <NavbarItem key={item.href} href={item.href}>
-            {item.children}
-          </NavbarItem>
-        ))}
-      </nav>
+      <div className="hidden lg:flex lg:items-center">
+        <nav role="navigation" aria-label="Main navigation">
+          {NavbarItems.map((item) => (
+            <NavbarItem key={item.href} href={item.href}>
+              {item.children}
+            </NavbarItem>
+          ))}
+        </nav>
 
-      <div className="flex gap-5">
-        <Button variant={"outline"} className="p-[22px]">
-          Sign in
-        </Button>
-        <Button variant={"default"} className="p-6">
-          Download Extension
-        </Button>
+        <div className="flex gap-5">
+          <Button variant={"outline"} className="p-[22px]">
+            Sign in
+          </Button>
+          <Button variant={"default"} className="p-6">
+            Download Extension
+          </Button>
+        </div>
+      </div>
+      <div className="flex lg:hidden">
+        {/* <Sheet>
+          <SheetTrigger>
+            <AlignJustify />
+          </SheetTrigger>
+          <SheetContent className="w-[400px] sm:w-[540px]">
+            <SheetHeader>
+              <SheetTitle>Are you absolutely sure?</SheetTitle>
+              <SheetDescription>
+                This action cannot be undone. This will permanently delete your
+                account and remove your data from our servers.
+              </SheetDescription>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet> */}
       </div>
     </div>
   );

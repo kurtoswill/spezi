@@ -70,7 +70,7 @@ export const Instructions = () => {
       <div className="text-[40px] mt-40 mb-10 max-w-[500px] font-bold leading-tight text-center mx-auto">
         How Spezi Works in Your Browser
       </div>
-      <div className="flex justify-between content-between">
+      <div className="flex flex-col lg:flex-row justify-between content-between">
         <InstructionSteps
           currentStep={currentStep}
           stepProgress={stepProgress}
