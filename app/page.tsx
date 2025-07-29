@@ -100,9 +100,9 @@ export default function Home() {
 
       <div>
         <Landing />
-        {/* <Features /> */}
-        {/* <Instructions /> */}
-        {/* <Pricing /> */}
+        <Features />
+        <Instructions />
+        <Pricing />
         <Download />
       </div>
     </>

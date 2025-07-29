@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { ExpandableText } from "@/components/ExpandableText";
 // import { Button } from "@/components/ui/button";
 
 interface SocialLinks {
@@ -148,7 +149,7 @@ const Page = () => {
         <div className="flex flex-col text-center mt-5 lg:flex-row lg:text-left lg:mt-18 items-center justify-between gap-12 ">
           <div className="flex gap-5 flex-col max-w-2xl">
             <div className="font-bold text-[35px] lg:text-[40px]">About Us</div>
-            <p>
+            <ExpandableText>
               Spezi is a browser-based communication assistant built
               specifically for English as a Second Language (ESL)
               professionals.We believe that great ideas shouldn’t be lost in
@@ -160,7 +161,7 @@ const Page = () => {
               accent, and communication style. We’re a small, passionate team of
               developers, designers, and language learners committed to making
               global communication more inclusive and empowering for everyone
-            </p>
+            </ExpandableText>
           </div>
           <Image
             src="/images/placeholder.jpg"
@@ -207,7 +208,7 @@ const Page = () => {
       </section>
 
       {/* Our Story Section */}
-      {/* <div className="flex items-center justify-between gap-12">
+      <div className="flex items-center justify-between gap-12">
         <div className="flex gap-5 flex-col max-w-2xl">
           <h1 className="text-[40px] font-bold">Our Story</h1>
           <p>
@@ -222,19 +223,19 @@ const Page = () => {
             crafted Spezi to be an accessible, real-time coaching tool no
             seminars or expensive lessons required.
           </p>
-        </div> */}
+        </div>
 
-      {/* <Image
+        <Image
           src="/images/placeholder.jpg"
           width={400}
           height={300}
           className="max-w-[400px] max-h-[300px] object-cover rounded-[10px] shadow-xl flex-shrink-0"
           alt="placeholder"
         />
-      </div> */}
+      </div>
 
       {/* Team Section */}
-      {/* <div className="mb-16">
+      <div className="mb-16">
         <div className="text-center mb-12">
           <h2 className="text-[40px] font-bold text-[#232C4F] mb-4">
             Meet Our Team
@@ -256,7 +257,7 @@ const Page = () => {
             />
           ))}
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

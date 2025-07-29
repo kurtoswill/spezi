@@ -3,6 +3,7 @@ import { InView } from "react-intersection-observer";
 import { useState, useEffect, useRef, SetStateAction } from "react";
 import { InstructionSteps } from "./InstructionSteps";
 import { InstructionsImage } from "./InstructionsImage";
+import { InstructionsAccordion } from "./InstructionsAccordion";
 
 interface StepData {
   step: number;
@@ -67,10 +68,10 @@ export const Instructions = () => {
 
   return (
     <InView as="div" onChange={(inView) => setIsVisible(inView)}>
-      <div className="text-[40px] mt-40 mb-10 max-w-[500px] font-bold leading-tight text-center mx-auto">
+      <div className="text-[35px] lg:text-[40px] mt-40 mb-10 max-w-[500px] font-bold leading-tight text-center mx-auto">
         How Spezi Works in Your Browser
       </div>
-      <div className="flex flex-col lg:flex-row justify-between content-between">
+      <div className="flex-col lg:flex-row hidden lg:flex justify-between content-between">
         <InstructionSteps
           currentStep={currentStep}
           stepProgress={stepProgress}
@@ -79,6 +80,14 @@ export const Instructions = () => {
         />
         <InstructionsImage
           currentStep={currentStep}
+          StepDataSet={StepDataSet}
+        />
+      </div>
+      <div className="flex lg:hidden">
+        <InstructionsAccordion
+          currentStep={currentStep}
+          stepProgress={stepProgress}
+          handleStepClick={handleStepClick}
           StepDataSet={StepDataSet}
         />
       </div>
