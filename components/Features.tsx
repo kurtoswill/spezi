@@ -1,3 +1,53 @@
+/* eslint-disable react/no-unescaped-entities */
+import { useState } from "react";
+
+const ExpandableText = ({ children, maxLength = 200 }: { children: string; maxLength?: number }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
+  const text = children;
+  const shouldTruncate = text.length > maxLength;
+  const truncatedText = text.slice(0, maxLength);
+  const remainingText = text.slice(maxLength);
+
+  return (
+    <div>
+      <p className="text-base sm:text-lg leading-relaxed">
+        {/* Show dynamic text on mobile, full text on desktop */}
+        <span className="block sm:hidden">
+          {shouldTruncate ? (
+            <>
+              {isExpanded ? text : truncatedText}
+              {!isExpanded && "... "}
+              {!isExpanded && (
+                <button
+                  onClick={() => setIsExpanded(true)}
+                  className="opacity-50 hover:text-[#232C4F] font-base transition-opacity duration-200 cursor-pointer"
+                >
+                  See more
+                </button>
+              )}
+            </>
+          ) : (
+            text
+          )}
+        </span>
+        <span className="hidden sm:block">
+          {text}
+        </span>
+      </p>
+      {/* Show "See less" button only when expanded */}
+      {shouldTruncate && isExpanded && (
+        <button
+          onClick={() => setIsExpanded(false)}
+          className="opacity-50 hover:text-[#232C4F] font-base transition-opacity duration-200 cursor-pointer sm:hidden mt-5"
+        >
+          See less
+        </button>
+      )}
+    </div>
+  );
+};
+
 export const Features = () => {
   return (
     <div className="text-[#232C4F] my-16 sm:my-24 md:my-32 lg:my-40 max-w-7xl mx-auto scroll-mt-32" id="features">
@@ -19,14 +69,14 @@ export const Features = () => {
             <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-[40px] font-bold leading-tight">
               Real-time feedback
             </h2>
-            <p className="text-base sm:text-lg leading-relaxed">
+            <ExpandableText maxLength={150}>
               Get live, in-the-moment feedback on how you speak — from detecting
               filler words and awkward pauses to evaluating pacing and tone.
               Spezi personalizes its feedback based on your regional accent and
               ESL level, offering simple, practical tips as you speak. No need
               to rewatch recordings or attend extra training — just plug in and
               improve naturally during every conversation.
-            </p>
+            </ExpandableText>
           </div>
 
           <div className="w-full max-w-[520px] h-[200px] sm:h-[240px] md:h-[280px] lg:w-[520px] lg:h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
@@ -40,14 +90,14 @@ export const Features = () => {
             <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-[40px] font-bold leading-tight">
               Post-meeting recaps
             </h2>
-            <p className="text-base sm:text-lg leading-relaxed">
+            <ExpandableText maxLength={150}>
               After each meeting, Spezi generates a detailed yet
               easy-to-understand summary of your communication performance.
-              You&#39;ll get targeted suggestions on pronunciation, clarity,
+              You'll get targeted suggestions on pronunciation, clarity,
               delivery, and pacing. These recaps help you identify specific
               areas for improvement and track your progress over time, without
               needing to sift through full recordings.
-            </p>
+            </ExpandableText>
           </div>
 
           <div className="w-full max-w-[520px] h-[200px] sm:h-[240px] md:h-[280px] lg:w-[520px] lg:h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
@@ -61,14 +111,14 @@ export const Features = () => {
             <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-[40px] font-bold leading-tight">
               Trend tracking overtime
             </h2>
-            <p className="text-base sm:text-lg leading-relaxed">
+            <ExpandableText maxLength={150}>
               See how your speaking patterns and habits are improving in areas
               like confidence, pacing, grammar, and clarity. It visualizes your
               progress through easy-to-read charts and offers ESL-specific
               insights that guide your learning journey. This allows you to stay
               motivated and focused as you see how your communication skills
               evolve with each session.
-            </p>
+            </ExpandableText>
           </div>
 
           <div className="w-full max-w-[520px] h-[200px] sm:h-[240px] md:h-[280px] lg:w-[520px] lg:h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
@@ -82,14 +132,14 @@ export const Features = () => {
             <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-[40px] font-bold leading-tight">
               Personalized improvement plans
             </h2>
-            <p className="text-base sm:text-lg leading-relaxed">
+            <ExpandableText maxLength={150}>
               Spezi creates tailored improvement plans based on your performance
               in each recorded session. These plans include practical exercises,
               pronunciation tips, and speaking strategies that focus on your
               unique challenges as an ESL speaker. By addressing specific areas
               like clarity, fluency, and confidence, the app helps you grow
               steadily and goals more effectively in professional settings.
-            </p>
+            </ExpandableText>
           </div>
 
           <div className="w-full max-w-[520px] h-[200px] sm:h-[240px] md:h-[280px] lg:w-[520px] lg:h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
@@ -100,4 +150,3 @@ export const Features = () => {
     </div>
   );
 };
-
