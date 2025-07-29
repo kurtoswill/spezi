@@ -2,14 +2,14 @@ import React from 'react';
 
 export const Pricing = () => {
     return (
-        <div className="mt-44 mx-auto" id="pricing">
+        <div className="mt-44 mx-auto scroll-mt-36" id="pricing">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                 {/* Left side - Text content */}
                 <div>
-                    <h2 className="text-[40px] font-bold leading-tight mb-6">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold leading-tight mb-6">
                         Find the right plan for your growth.
                     </h2>
-                    <p className="text-lg leading-relaxed text-gray-600 mb-8">
+                    <p className="text-base sm:text-lg max-w-2xl mb-8">
                         Start with the Free plan and experience how better communication unlocks new opportunities. Upgrade anytime to accelerate your progress.
                     </p>
 

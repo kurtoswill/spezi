@@ -35,7 +35,6 @@ export const Instructions = () => {
         setCurrentStep((prev) => prev + 1);
         setStepProgress(0);
       }
-
       clearTimeoutState();
       setTimeoutState(
         setTimeout(() => {
@@ -67,20 +66,24 @@ export const Instructions = () => {
 
   return (
     <InView as="div" onChange={(inView) => setIsVisible(inView)}>
-      <div className="text-[40px] mt-40 mb-10 max-w-[500px] font-bold leading-tight text-center mx-auto">
-        How Spezi Works in Your Browser
-      </div>
-      <div className="flex flex-col lg:flex-row justify-between content-between">
-        <InstructionSteps
-          currentStep={currentStep}
-          stepProgress={stepProgress}
-          handleStepClick={handleStepClick}
-          StepDataSet={StepDataSet}
-        />
-        <InstructionsImage
-          currentStep={currentStep}
-          StepDataSet={StepDataSet}
-        />
+      <div className="max-w-7xl mx-auto">
+        <div className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] mt-16 sm:mt-24 md:mt-32 lg:mt-40 mb-8 sm:mb-12 md:mb-16 lg:mb-16 xl:mb-24 2xl:mb-32 max-w-7xl font-bold leading-tight text-center mx-auto">
+          How Spezi Works in Your Browser
+        </div>
+        <div className="flex flex-col lg:flex-row justify-between content-between">
+          <InstructionSteps
+            currentStep={currentStep}
+            stepProgress={stepProgress}
+            handleStepClick={handleStepClick}
+            StepDataSet={StepDataSet}
+          />
+          <div className="w-full sm:w-4/5 md:w-3/4 lg:w-auto mx-auto lg:mx-0 mt-8 lg:mt-0 flex justify-center">
+            <InstructionsImage
+              currentStep={currentStep}
+              StepDataSet={StepDataSet}
+            />
+          </div>
+        </div>
       </div>
     </InView>
   );

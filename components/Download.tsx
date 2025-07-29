@@ -16,13 +16,15 @@ export const Download = () => {
           priority
           className="w-[50px] h-[50px] sm:min-w-[100px] sm:min-h-[100px] flex-shrink-0"
         />
-        <div className="font-bold text-sm sm:text-[35px] lg:text-[40px]">
+        <div className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold leading-tight px-4">
           Start Speaking Like a Pro
         </div>
-        <p className="text-sm sm:text-base">
+        <p className="text-base sm:text-lg max-w-2xl px-4">
           Install Spezi and get your first feedback in under 2 minutes.
         </p>
-        <Button className="p-7 mt-4 hover:bg-[#11141f]">
+        <Button className="p-6"
+          variant="default"
+        >
           Download Extension
         </Button>
       </div>

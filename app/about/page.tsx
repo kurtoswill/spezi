@@ -26,6 +26,7 @@ const TeamMember = ({ name, role, avatar, socialLinks }: TeamMemberProps) => {
             width={96}
             height={96}
             className="w-full h-full object-cover rounded-lg"
+            unoptimized
           />
         ) : (
           <span className="text-white text-2xl font-semibold">
@@ -90,7 +91,7 @@ const Page = () => {
     {
       name: "Kurt Oswill McCarver",
       role: "Developer",
-      avatar: "/images/placeholder.jpg",
+      avatar: "/images/kurt.jpeg",
       socialLinks: {
         facebook: "https://facebook.com/kurt.mccarver",
         instagram: "https://instagram.com/kurt.mccarver",
@@ -140,24 +141,27 @@ const Page = () => {
   ];
 
   return (
-    <div className="mb-52 flex flex-col gap-30 lg:gap-52">
+    <div className="mb- flex flex-col gap-10 lg:gap-52">
       <header>
-        <div className="font-extrabold font-sora text-3xl text-center max-w-[600px] mx-auto hidden lg:flex">
+        <div className="font-extrabold font-sora text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl leading-tight text-center max-w-4xl mx-auto">
           Behind Spezi: The People, Purpose, and Principles
         </div>
-        <div className="flex flex-col text-center mt-5 lg:flex-row lg:text-left lg:mt-18 items-center justify-between gap-12 ">
+        <div className="flex flex-col text-center mt-5 lg:flex-row lg:text-left lg:mt-18 justify-center gap-8 lg:gap-40 items-center">
           <div className="flex gap-5 flex-col max-w-2xl">
             <div className="font-bold text-[35px] lg:text-[40px]">About Us</div>
-            <p>
+            <p className="text-base sm:text-lg leading-relaxed">
               <b>Spezi</b> is a browser-based communication assistant built
-              specifically for <b>English as a Second Language (ESL) professionals.</b> We believe that great ideas shouldn’t be lost in
-              translation — that’s why we created a tool that supports
-              confident, clear communication during and after your online
-              meetings. Whether you’re pitching to clients, collaborating with
-              global teams, or leading virtual classrooms,<b>Spezi gives you real-time and post-call feedback</b> tailored to your unique voice,
-              accent, and communication style. We’re a small, passionate team of
-              developers, designers, and language learners committed to making
-              global communication more inclusive and empowering for everyone
+              specifically for{" "}
+              <b>English as a Second Language (ESL) professionals.</b> We
+              believe that great ideas shouldn’t be lost in translation — that’s
+              why we created a tool that supports confident, clear communication
+              during and after your online meetings. Whether you’re pitching to
+              clients, collaborating with global teams, or leading virtual
+              classrooms,<b>Spezi gives you real-time and post-call feedback</b>{" "}
+              tailored to your unique voice, accent, and communication style.
+              We’re a small, passionate team of developers, designers, and
+              language learners committed to making global communication more
+              inclusive and empowering for everyone
             </p>
           </div>
           <Image
@@ -166,10 +170,11 @@ const Page = () => {
             height={300}
             className="w-[350px] h-[262.5px] lg:w-[400px] lg:h-[300px] object-cover rounded-[10px] shadow-xl flex-shrink-0"
             alt="placeholder"
+            unoptimized
           />
         </div>
       </header>
-      <section className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-48">
+      <section className="flex flex-col-reverse lg:flex-row justify-center gap-8 lg:gap-40 items-center">
         <div className="flex items-center gap-3">
           <Image
             src="/images/placeholder.jpg"
@@ -177,6 +182,7 @@ const Page = () => {
             height={540}
             className="w-[130px] h-[262px]  lg:w-[200px] lg:h-[390px] object-cover rounded-[10px] shadow-xl"
             alt=""
+            unoptimized
           />
           <Image
             src="/images/placeholder.jpg"
@@ -184,18 +190,19 @@ const Page = () => {
             height={461}
             className="w-[130px] h-[220px] lg:w-[200px] lg:h-[350px] object-cover rounded-[10px] shadow-xl"
             alt=""
+            unoptimized
           />
         </div>
         <div className="flex gap-5 flex-col max-w-2xl text-center lg:text-left shrink-[3]">
           <div className="font-bold text-[35px] lg:text-[40px]">Vision</div>
-          <p>
+          <p className="text-base sm:text-lg leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </p>
           <div className="font-bold text-[35px] lg:text-[40px]">Mission</div>
-          <p>
+          <p className="text-base sm:text-lg leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -205,34 +212,36 @@ const Page = () => {
       </section>
 
       {/* Our Story Section */}
-      {/* <div className="flex items-center justify-between gap-12">
-        <div className="flex gap-5 flex-col max-w-2xl">
-          <h1 className="text-[40px] font-bold">Our Story</h1>
-          <p>
+      <div className="flex flex-col lg:flex-row justify-center items-center gap-10 md:gap-16 lg:gap-24 xl:gap-32 px-4 sm:px-6">
+        <div className="flex flex-col gap-5 max-w-2xl text-center lg:text-left">
+          <h1 className="text-[32px] sm:text-[36px] lg:text-[40px] font-bold">
+            Our Story
+          </h1>
+          <p className="text-base sm:text-lg leading-relaxed">
             Spezi was born out of countless stories from Filipino professionals
             and OFWs who felt silenced in virtual rooms not because they lacked
             skill, but because they lacked support.
           </p>
-          <p>
+          <p className="text-base sm:text-lg leading-relaxed">
             We started this project after seeing how language gaps affected job
             performance, team dynamics, and even self-esteem in global remote
             work environments. From hackathons to research-based prototypes, we
-            crafted Spezi to be an accessible, real-time coaching tool no
+            crafted Spezi to be an accessible, real-time coaching tool — no
             seminars or expensive lessons required.
           </p>
-        </div> */}
+        </div>
 
-      {/* <Image
+        <Image
           src="/images/placeholder.jpg"
           width={400}
           height={300}
-          className="max-w-[400px] max-h-[300px] object-cover rounded-[10px] shadow-xl flex-shrink-0"
-          alt="placeholder"
+          className="w-full max-w-sm object-cover rounded-[10px] shadow-xl"
+          alt="Our Story"
         />
-      </div> */}
+      </div>
 
       {/* Team Section */}
-      {/* <div className="mb-16">
+      <div className="mb-16">
         <div className="text-center mb-12">
           <h2 className="text-[40px] font-bold text-[#232C4F] mb-4">
             Meet Our Team
@@ -254,7 +263,7 @@ const Page = () => {
             />
           ))}
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

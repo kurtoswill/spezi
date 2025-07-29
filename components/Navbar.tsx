@@ -34,8 +34,9 @@ const NavbarItems = [
 
 export const Navbar = () => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  
   const handleTriggerClick = () => {
-    setIsSheetOpen((prev) => (prev = !prev));
+    setIsSheetOpen((prev) => !prev);
   };
 
   const handleLinkClick = () => {
@@ -44,12 +45,13 @@ export const Navbar = () => {
 
   return (
     <>
+      {/* Mobile Menu Overlay */}
       <div
         className={`${
           isSheetOpen ? "flex" : "hidden"
-        } flex-col fixed items-start pt-30 pb-15 px-6 w-[100vw] h-[100vh] inset-0 bg-white z-10 justify-between`}
+        } flex-col fixed items-center justify-between pt-20 pb-8 px-6 w-full h-full inset-0 bg-white z-40`}
       >
-        <div className="flex flex-col gap-5 items-start">
+        <div className="flex flex-col gap-6 items-center mt-8">
           {NavbarItems.map((item) => (
             <NavbarItem
               key={item.href}
@@ -61,53 +63,59 @@ export const Navbar = () => {
           ))}
         </div>
 
-        <div className="flex flex-col gap-5 w-full">
-          <Button variant={"outline"} className="w-full p-7">
+        <div className="flex flex-col gap-4 w-full max-w-sm">
+          <Button variant={"outline"} className="w-full py-3">
             Sign in
           </Button>
-          <Button variant={"default"} className="w-full p-7">
+          <Button variant={"default"} className="w-full py-3">
             Download Extension
           </Button>
         </div>
       </div>
 
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white flex justify-between items-center px-8 md:px-32 lg:px-[200px] shadow py-5">
-        {/*Logo*/}
-        <Link href="/">
-          <Image
-            src="/logos/spezi-logo-2.png"
-            alt="Spezi logo"
-            width={100}
-            height={100}
-            priority
-          />
-        </Link>
+      {/* Main Navbar */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow">
+        <div className="flex justify-between items-center px-6 md:px-8 lg:px-32 xl:px-[200px] py-4">
+          {/* Logo */}
+          <Link href="/" className="flex-shrink-0">
+            <Image
+              src="/logos/spezi-logo-2.png"
+              alt="Spezi logo"
+              width={100}
+              height={100}
+              priority
+            />
+          </Link>
 
-        {/*NavLinks*/}
-        <div className="hidden lg:flex lg:items-center">
-          <nav role="navigation" aria-label="Main navigation">
-            {NavbarItems.map((item) => (
-              <NavbarItem
-                key={item.href}
-                href={item.href}
-                handleLinkClick={handleLinkClick}
-              >
-                {item.children}
-              </NavbarItem>
-            ))}
-          </nav>
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex lg:items-center lg:justify-center flex-1 mx-8">
+            <nav role="navigation" aria-label="Main navigation" className="flex items-center">
+              {NavbarItems.map((item) => (
+                <NavbarItem key={item.href} href={item.href}>
+                  {item.children}
+                </NavbarItem>
+              ))}
+            </nav>
+          </div>
 
-          <div className="flex gap-5">
-            <Button variant={"outline"} className="p-[22px]">
+          {/* Desktop Action Buttons */}
+          <div className="hidden lg:flex gap-4 flex-shrink-0">
+            <Button variant={"outline"} className="px-6 py-5.5">
               Sign in
             </Button>
-            <Button variant={"default"} className="p-6">
+            <Button variant={"default"} className="px-6 py-6">
               Download Extension
             </Button>
           </div>
-        </div>
-        <div className="flex flex-col lg:hidden" onClick={handleTriggerClick}>
-          {isSheetOpen ? <X /> : <AlignJustify />}
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="lg:hidden p-2 hover:bg-gray-100 rounded-md transition-colors"
+            onClick={handleTriggerClick}
+            aria-label={isSheetOpen ? "Close menu" : "Open menu"}
+          >
+            {isSheetOpen ? <X size={24} /> : <AlignJustify size={24} />}
+          </button>
         </div>
       </div>
     </>

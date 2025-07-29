@@ -1,24 +1,25 @@
 export const Features = () => {
   return (
-    <div className="text-[#232C4F] mt-40 mx-auto" id="features">
-      <div className="flex flex-col gap-5 items-center text-center mb-40">
-        <h1 className="text-[40px] font-bold leading-tight">
+    <div className="text-[#232C4F] my-16 sm:my-24 md:my-32 lg:my-40 max-w-7xl mx-auto scroll-mt-32" id="features">
+      {/* Header Section */}
+      <div className="flex flex-col gap-4 sm:gap-5 items-center text-center mb-24 sm:mb-24 md:mb-24 lg:mb-24">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold leading-tight px-4">
           Enhance How You Speak, Effortlessly
         </h1>
-        <p className="text-lg max-w-2xl">
+        <p className="text-base sm:text-lg max-w-2xl px-4">
           Spezi gives instant, in-meeting feedback to help you speak clearer and
           more confidently — no coach required.
         </p>
       </div>
 
-      <div className="space-y-32">
+      <div className="space-y-16 sm:space-y-20 md:space-y-24 lg:space-y-32">
         {/* Real-time feedback */}
-        <div className="flex justify-center gap-40 items-center">
-          <div className="max-w-3xl flex flex-col gap-6">
-            <h2 className="text-[40px] font-bold leading-tight">
+        <div className="flex flex-col lg:flex-row justify-center gap-8 lg:gap-40 items-center">
+          <div className="w-full lg:max-w-3xl flex flex-col gap-4 sm:gap-6 text-center lg:text-left">
+            <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-[40px] font-bold leading-tight">
               Real-time feedback
             </h2>
-            <p className="text-lg leading-relaxed">
+            <p className="text-base sm:text-lg leading-relaxed">
               Get live, in-the-moment feedback on how you speak — from detecting
               filler words and awkward pauses to evaluating pacing and tone.
               Spezi personalizes its feedback based on your regional accent and
@@ -28,22 +29,18 @@ export const Features = () => {
             </p>
           </div>
 
-          <div className="w-[520px] h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
+          <div className="w-full max-w-[520px] h-[200px] sm:h-[240px] md:h-[280px] lg:w-[520px] lg:h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
             {/*Real-time feedback visualization*/}
           </div>
         </div>
 
         {/* Post-meeting recaps */}
-        <div className="flex justify-center gap-40 items-center">
-          <div className="w-[520px] h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
-            {/*Post-meeting recaps visualization*/}
-          </div>
-
-          <div className="max-w-3xl flex flex-col gap-6">
-            <h2 className="text-[40px] font-bold leading-tight">
+        <div className="flex flex-col lg:flex-row-reverse justify-center gap-8 lg:gap-40 items-center">
+          <div className="w-full lg:max-w-3xl flex flex-col gap-4 sm:gap-6 text-center lg:text-left">
+            <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-[40px] font-bold leading-tight">
               Post-meeting recaps
             </h2>
-            <p className="text-lg leading-relaxed">
+            <p className="text-base sm:text-lg leading-relaxed">
               After each meeting, Spezi generates a detailed yet
               easy-to-understand summary of your communication performance.
               You&#39;ll get targeted suggestions on pronunciation, clarity,
@@ -52,15 +49,19 @@ export const Features = () => {
               needing to sift through full recordings.
             </p>
           </div>
+
+          <div className="w-full max-w-[520px] h-[200px] sm:h-[240px] md:h-[280px] lg:w-[520px] lg:h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
+            {/*Post-meeting recaps visualization*/}
+          </div>
         </div>
 
         {/* Trend tracking overtime */}
-        <div className="flex justify-center gap-40 items-center">
-          <div className="max-w-3xl flex flex-col gap-6">
-            <h2 className="text-[40px] font-bold leading-tight">
+        <div className="flex flex-col lg:flex-row justify-center gap-8 lg:gap-40 items-center">
+          <div className="w-full lg:max-w-3xl flex flex-col gap-4 sm:gap-6 text-center lg:text-left">
+            <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-[40px] font-bold leading-tight">
               Trend tracking overtime
             </h2>
-            <p className="text-lg leading-relaxed">
+            <p className="text-base sm:text-lg leading-relaxed">
               See how your speaking patterns and habits are improving in areas
               like confidence, pacing, grammar, and clarity. It visualizes your
               progress through easy-to-read charts and offers ESL-specific
@@ -70,22 +71,18 @@ export const Features = () => {
             </p>
           </div>
 
-          <div className="w-[520px] h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
+          <div className="w-full max-w-[520px] h-[200px] sm:h-[240px] md:h-[280px] lg:w-[520px] lg:h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
             {/*Trend tracking visualization*/}
           </div>
         </div>
 
         {/* Personalized improvement plans */}
-        <div className="flex justify-center gap-40 items-center">
-          <div className="w-[520px] h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
-            {/*Personalized improvement plans visualization*/}
-          </div>
-
-          <div className="max-w-3xl flex flex-col gap-6">
-            <h2 className="text-[40px] font-bold leading-tight">
+        <div className="flex flex-col lg:flex-row-reverse justify-between gap-8 lg:gap-40 items-center">
+          <div className="w-full lg:max-w-3xl flex flex-col gap-4 sm:gap-6 text-center lg:text-left">
+            <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-[40px] font-bold leading-tight">
               Personalized improvement plans
             </h2>
-            <p className="text-lg leading-relaxed">
+            <p className="text-base sm:text-lg leading-relaxed">
               Spezi creates tailored improvement plans based on your performance
               in each recorded session. These plans include practical exercises,
               pronunciation tips, and speaking strategies that focus on your
@@ -94,8 +91,13 @@ export const Features = () => {
               steadily and goals more effectively in professional settings.
             </p>
           </div>
+
+          <div className="w-full max-w-[520px] h-[200px] sm:h-[240px] md:h-[280px] lg:w-[520px] lg:h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
+            {/*Personalized improvement plans visualization*/}
+          </div>
         </div>
       </div>
     </div>
   );
 };
+

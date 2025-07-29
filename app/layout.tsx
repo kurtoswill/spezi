@@ -27,11 +27,13 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${manrope.variable} ${sora.variable}`}>
-      <body className="font-sans antialiased text-[#232C4F]">
+      <body className="font-sans antialiased text-[#232C4F] min-h-screen flex flex-col">
         <Toaster position="top-center" />
         <Navbar />
-        <main className="px-6 md:px-24 lg:px-[150px] pt-38 2xl:max-w-screen-2xl 2xl:mx-auto">
-          {children}
+        <main className="flex-1 w-full">
+          <div className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-32 pt-20 sm:pt-24 md:pt-28 lg:pt-32">
+            {children}
+          </div>
         </main>
         <Footer />
       </body>
