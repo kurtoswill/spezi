@@ -143,7 +143,7 @@ const Page = () => {
     {
       name: "Kurt Oswill McCarver",
       role: "Developer",
-      avatar: "/images/kurt.jpeg",
+      avatar: "/images/kurt.jpg",
       socialLinks: {
         facebook: "https://facebook.com/kurt.mccarver",
         instagram: "https://instagram.com/kurt.mccarver",
@@ -153,7 +153,7 @@ const Page = () => {
     {
       name: "Niles Tristan Cabrera",
       role: "Developer",
-      avatar: "/images/kurt.jpeg",
+      avatar: "/images/kurt.jpg",
       socialLinks: {
         facebook: "https://facebook.com/niles.cabrera",
         instagram: "https://instagram.com/niles.cabrera",
@@ -163,7 +163,7 @@ const Page = () => {
     {
       name: "Gianfranco Lobaton",
       role: "Business Lead",
-      avatar: "/images/kurt.jpeg",
+      avatar: "/images/kurt.jpg",
       socialLinks: {
         facebook: "https://facebook.com/gianfranco.lobaton",
         instagram: "https://instagram.com/gianfranco.lobaton",
@@ -173,7 +173,7 @@ const Page = () => {
     {
       name: "Verah Janae Dulay",
       role: "Researcher | Designer",
-      avatar: "/images/kurt.jpeg",
+      avatar: "/images/kurt.jpg",
       socialLinks: {
         facebook: "https://facebook.com/verah.dulay",
         instagram: "https://instagram.com/verah.dulay",
@@ -183,7 +183,7 @@ const Page = () => {
     {
       name: "Kazel Arwen Tuazon",
       role: "UI/UX Lead | Researcher",
-      avatar: "/images/kurt.jpeg",
+      avatar: "/images/kazel.jpg",
       socialLinks: {
         facebook: "https://facebook.com/kazel.tuazon",
         instagram: "https://instagram.com/kazel.tuazon",
@@ -261,16 +261,14 @@ const Page = () => {
           <div className="font-bold text-[35px] lg:text-[40px]">Mission</div>
           <ExpandableText previewLength={120} className="text-base sm:text-lg leading-relaxed">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Spezi empowers ESL professionals to communicate with clarity and confidence through real-time and personalized feedback. We help ensure that language never stands in the way of sharing ideas, leading conversations, or connecting across cultures.
             </p>
           </ExpandableText>
 
           <div className="font-bold text-[35px] lg:text-[40px]">Vision</div>
           <ExpandableText previewLength={120} className="text-base sm:text-lg leading-relaxed">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              We envision a world where global communication is inclusive, fluent, and accessible — where every voice is heard, every idea is understood, and language is a bridge, not a barrier.
             </p>
           </ExpandableText>
         </div>
