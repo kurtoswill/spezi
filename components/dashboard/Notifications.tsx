@@ -54,10 +54,10 @@ export const Notifications = () => {
         {mockNotifications.map((notif) => {
           return (
             <div className="flex justify-between">
-              <div className="grid grid-cols-5 w-[70%]">
+              <div className="grid grid-cols-9 w-[70%]">
                 <Checkbox className="border-gray-600 col-span-1" />
-                <span className="font-medium col-span-2">{notif.topic}</span>
-                <span className="font-medium col-span-2">{notif.preview}</span>
+                <span className="font-medium col-span-4">{notif.topic}</span>
+                <span className="font-medium col-span-4">{notif.preview}</span>
               </div>
               <span className="font-medium">
                 {notif.date.month} {notif.date.day}
