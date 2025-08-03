@@ -106,7 +106,7 @@ export const Settings = () => {
                     <div className="p-4 flex justify-between items-center">
                         <div>
                             <h3 className="font-medium">Track Filler Words</h3>
-                            <p className="text-sm text-gray-600">Count "um", "uh", "like", etc.</p>
+                            <p className="text-sm text-gray-600">Count &#34;um&#34;, &#34;uh&#34;, &#34;like&#34;, etc.</p>
                         </div>
                         <Switch defaultChecked />
                     </div>

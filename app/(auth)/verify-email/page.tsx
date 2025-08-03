@@ -28,7 +28,7 @@ export default function VerifyEmailPage() {
         // Verify the email using Supabase
         const { error } = await supabase.auth.verifyOtp({
           token_hash: token,
-          type: 'email_confirmation',
+          type: 'signup'
         });
 
         if (error) {

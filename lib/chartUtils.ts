@@ -51,17 +51,13 @@ export const chartColors = {
         fill: "fill-pink-500",
         text: "text-pink-500",
     },
-} as const satisfies {
-    [color: string]: {
-        [key in ColorUtility]: string
-    }
-}
+} as const satisfies Record<string, Record<ColorUtility, string>>
 
 export type AvailableChartColorsKeys = keyof typeof chartColors
 
 export const AvailableChartColors: AvailableChartColorsKeys[] = Object.keys(
-    chartColors,
-) as Array<AvailableChartColorsKeys>
+    chartColors
+) as AvailableChartColorsKeys[]
 
 export const constructCategoryColors = (
     categories: string[],
@@ -69,7 +65,8 @@ export const constructCategoryColors = (
 ): Map<string, AvailableChartColorsKeys> => {
     const categoryColors = new Map<string, AvailableChartColorsKeys>()
     categories.forEach((category, index) => {
-        categoryColors.set(category, colors[index % colors.length])
+        const color = colors[index % colors.length]
+        categoryColors.set(category, color)
     })
     return categoryColors
 }
@@ -78,7 +75,7 @@ export const getColorClassName = (
     color: AvailableChartColorsKeys,
     type: ColorUtility,
 ): string => {
-    const fallbackColor = {
+    const fallbackColor: Record<ColorUtility, string> = {
         bg: "bg-gray-500",
         stroke: "stroke-gray-500",
         fill: "fill-gray-500",
@@ -91,9 +88,9 @@ export const getColorClassName = (
 
 export const getYAxisDomain = (
     autoMinValue: boolean,
-    minValue: number | undefined,
-    maxValue: number | undefined,
-) => {
+    minValue?: number,
+    maxValue?: number,
+): [number | "auto", number | "auto"] => {
     const minDomain = autoMinValue ? "auto" : (minValue ?? 0)
     const maxDomain = maxValue ?? "auto"
     return [minDomain, maxDomain]
@@ -101,16 +98,20 @@ export const getYAxisDomain = (
 
 // Tremor Raw hasOnlyOneValueForKey [v0.1.0]
 
-export function hasOnlyOneValueForKey(
-    array: any[],
-    keyToCheck: string,
+export function hasOnlyOneValueForKey<T extends Record<string, unknown>>(
+    array: T[],
+    keyToCheck: keyof T,
 ): boolean {
-    const val: any[] = []
+    let firstValue: unknown | undefined = undefined
+    let seen = false
 
     for (const obj of array) {
-        if (Object.prototype.hasOwnProperty.call(obj, keyToCheck)) {
-            val.push(obj[keyToCheck])
-            if (val.length > 1) {
+        if (keyToCheck in obj) {
+            const value = obj[keyToCheck]
+            if (!seen) {
+                firstValue = value
+                seen = true
+            } else if (value !== firstValue) {
                 return false
             }
         }
