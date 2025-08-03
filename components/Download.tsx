@@ -4,7 +4,7 @@ import Image from "next/image";
 export const Download = () => {
   return (
     <div
-      className="mt-25 -mx-6 md:-mx-24 lg:-mx-[150px] w-[100vw] bg-[#F9FAFB] 
+      className="mt-25 -mx-4 sm:-mx-6 md:-mx-8 lg:-mx-16 xl:-mx-24 2xl:-mx-32 w-[100vw] bg-[#F9FAFB] 
     justify-center items-center flex-shrink-0"
     >
       <div className="flex flex-col gap-4 px-2 py-20 sm:py-40 justify-center items-center text-center">
@@ -22,9 +22,7 @@ export const Download = () => {
         <p className="text-base sm:text-lg max-w-2xl px-4">
           Install Spezi and get your first feedback in under 2 minutes.
         </p>
-        <Button className="p-6"
-          variant="default"
-        >
+        <Button className="p-6" variant="default">
           Download Extension
         </Button>
       </div>

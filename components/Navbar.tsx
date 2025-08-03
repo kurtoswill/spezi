@@ -87,16 +87,6 @@ export const Navbar = () => {
                   </div>
                   <Button
                       variant={"outline"}
-                      className="w-full py-3 mb-2"
-                      asChild
-                  >
-                    <Link href="/dashboard" onClick={handleLinkClick}>
-                      <User size={16} className="mr-2" />
-                      Dashboard
-                    </Link>
-                  </Button>
-                  <Button
-                      variant={"outline"}
                       className="w-full py-3"
                       onClick={handleSignOut}
                       disabled={loading}
@@ -106,22 +96,21 @@ export const Navbar = () => {
                   </Button>
                 </>
             ) : (
-                <>
-                  <Button variant={"outline"} className="w-full py-3" asChild>
-                    <Link href="/waitlist" onClick={handleLinkClick}>
-                      Join the Waitlist
-                    </Link>
-                  </Button>
-                  <Button
-                      variant={"default"}
-                      className="w-full py-3"
-                      asChild
-                      onClick={handleLinkClick}
-                  >
-                    <Link href="/login">Log In</Link>
-                  </Button>
-                </>
+                <Button
+                    variant={"outline"}
+                    className="w-full py-3"
+                    asChild
+                >
+                  <Link href="/waitlist" onClick={handleLinkClick}>
+                    Join the Waitlist
+                  </Link>
+                </Button>
             )}
+            <Button variant={"default"} className="w-full py-3">
+              <Link href="/login">
+                Log in
+              </Link>
+            </Button>
           </div>
         </div>
 
@@ -160,7 +149,9 @@ export const Navbar = () => {
                         onClick={toggleUserMenu}
                     >
                       <User size={16} />
-                      <span className="max-w-32 truncate">{user.email}</span>
+                      <span className="max-w-32 truncate">
+                    {user.email}
+                  </span>
                     </Button>
 
                     {/* User Dropdown Menu */}
@@ -173,15 +164,6 @@ export const Navbar = () => {
                             <div className="px-4 py-2 text-sm font-medium text-gray-900 border-b truncate">
                               {user.email}
                             </div>
-                            <Link href="/dashboard">
-                              <Button
-                                  variant={"ghost"}
-                                  className="w-full justify-start px-4 py-2 text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                              >
-                                <User size={16} className="mr-2" />
-                                Dashboard
-                              </Button>
-                            </Link>
                             <Button
                                 variant={"ghost"}
                                 className="w-full justify-start px-4 py-2 text-sm text-red-600 hover:text-red-800 hover:bg-red-50"
@@ -200,11 +182,11 @@ export const Navbar = () => {
                     <Link href="/waitlist">Join the Waitlist</Link>
                   </Button>
               )}
-              {!user && (
-                <Button variant={"default"} className="px-6 py-6" asChild>
-                  <Link href="/login">Log In</Link>
-                </Button>
-              )}
+              <Button variant={"default"} className="py-6">
+                <Link href="/login">
+                  Log in
+                </Link>
+              </Button>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -220,7 +202,10 @@ export const Navbar = () => {
 
         {/* Click outside to close user menu */}
         {showUserMenu && (
-            <div className="fixed inset-0 z-40" onClick={() => setShowUserMenu(false)} />
+            <div
+                className="fixed inset-0 z-40"
+                onClick={() => setShowUserMenu(false)}
+            />
         )}
       </>
   );
