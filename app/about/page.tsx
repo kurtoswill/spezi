@@ -153,7 +153,7 @@ const Page = () => {
     {
       name: "Niles Tristan Cabrera",
       role: "Developer",
-      avatar: "/images/kurt.jpg",
+      avatar: "/images/niles.jpg",
       socialLinks: {
         facebook: "https://facebook.com/niles.cabrera",
         instagram: "https://instagram.com/niles.cabrera",
@@ -173,7 +173,7 @@ const Page = () => {
     {
       name: "Verah Janae Dulay",
       role: "Researcher | Designer",
-      avatar: "/images/kurt.jpg",
+      avatar: "/images/verah.jpg",
       socialLinks: {
         facebook: "https://facebook.com/verah.dulay",
         instagram: "https://instagram.com/verah.dulay",
@@ -227,7 +227,7 @@ const Page = () => {
             </ExpandableText>
           </div>
           <Image
-            src="/images/placeholder.jpg"
+            src="/images/about.jpg"
             width={400}
             height={300}
             className="w-[350px] h-[262.5px] lg:w-[400px] lg:h-[300px] object-cover rounded-[10px] shadow-xl flex-shrink-0"
@@ -241,7 +241,7 @@ const Page = () => {
       <section className="flex flex-col-reverse lg:flex-row justify-center gap-8 lg:gap-40 items-center">
         <div className="flex items-center gap-3">
           <Image
-            src="/images/placeholder.jpg"
+            src="/images/vision.jpg"
             width={280}
             height={540}
             className="w-[130px] h-[262px] lg:w-[200px] lg:h-[390px] object-cover rounded-[10px] shadow-xl"
@@ -249,7 +249,7 @@ const Page = () => {
             unoptimized
           />
           <Image
-            src="/images/placeholder.jpg"
+            src="/images/mission.jpg"
             width={280}
             height={461}
             className="w-[130px] h-[220px] lg:w-[200px] lg:h-[350px] object-cover rounded-[10px] shadow-xl"
@@ -286,6 +286,7 @@ const Page = () => {
               and OFWs who felt silenced in virtual rooms not because they lacked
               skill, but because they lacked support.
             </p>
+            <br/>
             <p className="text-base sm:text-lg leading-relaxed">
               We started this project after seeing how language gaps affected job
               performance, team dynamics, and even self-esteem in global remote
@@ -297,7 +298,7 @@ const Page = () => {
         </div>
 
         <Image
-          src="/images/placeholder.jpg"
+          src="/images/story.jpg"
           width={400}
           height={300}
           className="w-full max-w-sm object-cover rounded-[10px] shadow-xl"

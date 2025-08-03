@@ -71,14 +71,6 @@ export default function WaitlistPage() {
         return (
             <div className="min-h-screen flex items-center justify-center mt-20 sm:-mt-24 md:-mt-28 lg:-mt-32">
                 <div className="max-w-md w-full mx-4">
-                    <Link
-                        href="/"
-                        className="inline-flex items-center text-[#232C4F] hover:text-[#232C4F]/80 mb-8 transition-colors"
-                    >
-                        <ArrowLeft size={20} className="mr-2" />
-                        Back to Home
-                    </Link>
-
                     <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-200">
                         <div className="text-center">
                             <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
@@ -122,14 +114,6 @@ export default function WaitlistPage() {
     return (
         <div className="min-h-screen flex items-center justify-center -mt-20 sm:-mt-24 md:-mt-28 lg:-mt-32">
             <div className="max-w-md w-full mx-4">
-                <Link
-                    href="/"
-                    className="inline-flex items-center text-[#232C4F] hover:text-[#232C4F]/80 mb-8 transition-colors"
-                >
-                    <ArrowLeft size={20} className="mr-2" />
-                    Back to Home
-                </Link>
-
                 <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                     <div className="text-center mb-8">
                         <div className="inline-flex items-center justify-center w-16 h-16 bg-[#232C4F]/10 rounded-full mb-4">
@@ -138,12 +122,6 @@ export default function WaitlistPage() {
                         <h1 className="text-2xl font-bold text-[#232C4F] mb-2">
                             Join Our Waitlist
                         </h1>
-
-                        {waitlistCount !== null && (
-                            <p className="text-sm text-gray-600 mb-4">
-                                {waitlistCount.toLocaleString()} people have already joined the waitlist.
-                            </p>
-                        )}
 
                         <p className="text-gray-600">
                             Be the first to know when Spezi launches and start speaking English professionally!
@@ -196,7 +174,7 @@ export default function WaitlistPage() {
                         <Button
                             type="submit"
                             disabled={loading}
-                            className="w-full bg-[#232C4F] hover:bg-[#232C4F]/90 text-white py-3 px-4 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="w-full bg-[#232C4F] hover:bg-[#232C4F]/90 text-white py-6 px-4 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             {loading ? (
                                 <div className="flex items-center justify-center">
@@ -209,22 +187,12 @@ export default function WaitlistPage() {
                         </Button>
                     </form>
 
-                    <div className="mt-6 text-center">
-                        <p className="text-gray-600 mb-4">
-                            Ready to get started now?
-                        </p>
-                        <Link
-                            href="/login"
-                            className="font-medium text-[#232C4F] hover:text-[#232C4F]/80 transition-colors"
-                        >
-                            Create an account instead
-                        </Link>
-                    </div>
-
-                    <div className="mt-6 text-center">
-                        <p className="text-xs text-gray-500">
-                            We respect your privacy. No spam, just updates about Spezi.
-                        </p>
+                    <div className="justify-center flex items-center">
+                        {waitlistCount !== null && (
+                            <p className="text-sm text-gray-600 mt-4">
+                                {waitlistCount.toLocaleString()} people have already joined the waitlist.
+                            </p>
+                        )}
                     </div>
                 </div>
             </div>

@@ -47,7 +47,7 @@ export const Landing = ({ waitlistCount }: { waitlistCount: number | null }) => 
         <div className="flex items-center justify-center gap-4 sm:gap-4 lg:gap-6 flex-shrink-0 lg:flex-1 lg:justify-end">
           <div className="relative">
             <Image
-                src="/images/placeholder.jpg"
+                src="/images/landingTwo.jpg"
                 width={280}
                 height={461}
                 className="w-[160px] h-[280px] sm:w-[140px] sm:h-[240px] md:w-[160px] md:h-[280px] lg:w-[180px] lg:h-[320px] xl:w-[200px] xl:h-[360px] object-cover rounded-lg shadow-2xl"
@@ -58,7 +58,7 @@ export const Landing = ({ waitlistCount }: { waitlistCount: number | null }) => 
           </div>
           <div className="relative">
             <Image
-                src="/images/placeholder.jpg"
+                src="/images/landingOne.jpg"
                 width={280}
                 height={540}
                 className="w-[160px] h-[320px] sm:w-[140px] sm:h-[280px] md:w-[160px] md:h-[320px] lg:w-[180px] lg:h-[360px] xl:w-[200px] xl:h-[400px] object-cover rounded-lg shadow-2xl"

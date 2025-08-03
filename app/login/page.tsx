@@ -12,6 +12,8 @@ export default function LoginPage() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
     const [isSignUp, setIsSignUp] = useState(false)
     const [loading, setLoading] = useState(false)
     const [showPassword, setShowPassword] = useState(false)
@@ -20,11 +22,8 @@ export default function LoginPage() {
     const { signIn, signUp, user } = useAuth()
     const router = useRouter()
 
-    // Redirect if already logged in
-    if (user) {
-        router.push('/')
-        return null
-    }
+    // REMOVED: The problematic redirect code that was causing the error
+    // The middleware will handle redirecting authenticated users
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
@@ -44,7 +43,7 @@ export default function LoginPage() {
 
         try {
             const { data, error } = isSignUp
-                ? await signUp(email, password)
+                ? await signUp(email, password, firstName, lastName)
                 : await signIn(email, password)
 
             if (error) {
@@ -53,7 +52,7 @@ export default function LoginPage() {
                 toast.success('Check your email for confirmation link!')
             } else {
                 toast.success('Successfully signed in!')
-                router.push('/')
+                router.push('/dashboard')
             }
         } catch (error) {
             toast.error('An unexpected error occurred')
@@ -141,6 +140,52 @@ export default function LoginPage() {
                             </div>
                         </div>
 
+                        {/* First Name Field (Sign Up Only) */}
+                        {isSignUp && (
+                            <div>
+                                <label htmlFor="firstName" className="block text-sm font-medium text-[#232C4F] mb-2">
+                                    First Name
+                                </label>
+                                <div className="relative">
+                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <User size={20} className="text-gray-400" />
+                                    </div>
+                                    <input
+                                        id="firstName"
+                                        type="text"
+                                        value={firstName}
+                                        onChange={(e) => setFirstName(e.target.value)}
+                                        required
+                                        placeholder="Enter your first name"
+                                        className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#232C4F] focus:border-transparent transition-colors"
+                                    />
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Last Name Field (Sign Up Only) */}
+                        {isSignUp && (
+                            <div>
+                                <label htmlFor="lastName" className="block text-sm font-medium text-[#232C4F] mb-2">
+                                    Last Name
+                                </label>
+                                <div className="relative">
+                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <User size={20} className="text-gray-400" />
+                                    </div>
+                                    <input
+                                        id="lastName"
+                                        type="text"
+                                        value={lastName}
+                                        onChange={(e) => setLastName(e.target.value)}
+                                        required
+                                        placeholder="Enter your last name"
+                                        className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#232C4F] focus:border-transparent transition-colors"
+                                    />
+                                </div>
+                            </div>
+                        )}
+
                         {/* Confirm Password Field (Sign Up Only) */}
                         {isSignUp && (
                             <div>
@@ -175,7 +220,7 @@ export default function LoginPage() {
                         <Button
                             type="submit"
                             disabled={loading}
-                            className="w-full bg-[#232C4F] hover:bg-[#232C4F]/90 text-white py-3 px-4 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="w-full bg-[#232C4F] hover:bg-[#232C4F]/90 text-white py-6 px-4 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             {loading ? (
                                 <div className="flex items-center justify-center">
@@ -198,22 +243,14 @@ export default function LoginPage() {
                                     setIsSignUp(!isSignUp)
                                     setPassword('')
                                     setConfirmPassword('')
+                                    setFirstName('')
+                                    setLastName('')
                                 }}
-                                className="font-medium text-[#232C4F] hover:text-[#232C4F]/80 transition-colors"
+                                className="font-medium text-[#232C4F] hover:text-[#232C4F]/80 transition-colors cursor-pointer"
                             >
                                 {isSignUp ? 'Sign In' : 'Sign Up'}
                             </button>
                         </p>
-                    </div>
-
-                    {/* Waitlist Link */}
-                    <div className="mt-4 text-center">
-                        <Link
-                            href="/waitlist"
-                            className="text-sm text-gray-500 hover:text-[#232C4F] transition-colors"
-                        >
-                            Join our waitlist instead
-                        </Link>
                     </div>
                 </div>
             </div>

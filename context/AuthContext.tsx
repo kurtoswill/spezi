@@ -7,7 +7,7 @@ import { User, Session, AuthError } from '@supabase/supabase-js';
 interface AuthContextType {
     user: User | null;
     loading: boolean;
-    signUp: (email: string, password: string) => Promise<{ data: any; error: AuthError | null }>;
+    signUp: (email: string, password: string, firstName?: string, lastName?: string) => Promise<{ data: any; error: AuthError | null }>;
     signIn: (email: string, password: string) => Promise<{ data: any; error: AuthError | null }>;
     signOut: () => Promise<{ error: AuthError | null }>;
     session: Session | null;
@@ -51,11 +51,30 @@ export function AuthProvider({ children }: AuthProviderProps) {
         return () => subscription?.unsubscribe();
     }, []);
 
-    const signUp = async (email: string, password: string) => {
+    const signUp = async (email: string, password: string, firstName?: string, lastName?: string) => {
         const { data, error } = await supabase.auth.signUp({
             email,
             password,
+            options: {
+                data: {
+                    first_name: firstName,
+                    last_name: lastName,
+                },
+            },
         });
+        
+        if (data?.user && !error) {
+            // Update the users table with first_name and last_name
+            const { error: updateError } = await supabase
+                .from('users')
+                .update({ first_name: firstName, last_name: lastName })
+                .eq('id', data.user.id);
+                
+            if (updateError) {
+                console.error('Error updating user metadata:', updateError);
+            }
+        }
+        
         return { data, error };
     };
 
