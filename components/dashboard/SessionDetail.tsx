@@ -76,52 +76,68 @@ export const SessionDetail = ({ sessionId, onBack }: SessionDetailProps) => {
     const circumference = 2 * Math.PI * 40; // r = 40
     const strokeDashoffset = circumference - (value / 100) * circumference;
     const colorClass = getColorForScore(value);
-    
+
     return (
-      <div className="flex flex-col items-center">
-        <div className="relative w-24 h-24">
-          <svg className="w-24 h-24" viewBox="0 0 100 100">
-            {/* Background circle */}
-            <circle
-              cx="50"
-              cy="50"
-              r="40"
-              fill="none"
-              stroke="#e5e7eb"
-              strokeWidth="8"
-            />
-            {/* Progress circle */}
-            <circle
-              cx="50"
-              cy="50"
-              r="40"
-              fill="none"
-              stroke={value >= 80 ? "#10b981" : value >= 60 ? "#f59e0b" : "#ef4444"}
-              strokeWidth="8"
-              strokeDasharray={circumference}
-              strokeDashoffset={strokeDashoffset}
-              strokeLinecap="round"
-              transform="rotate(-90 50 50)"
-            />
-            {/* Percentage text */}
-            <text
-              x="50"
-              y="50"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fontSize="18"
-              fontWeight="bold"
-              className={colorClass}
-            >
-              {value}%
-            </text>
-          </svg>
+        <div className="flex flex-col items-center">
+          <div className="relative w-32 h-32">
+            <svg className="w-32 h-32" viewBox="0 0 100 100">
+              {/* Define inner shadow filter */}
+              <defs>
+                <filter id="inner-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feOffset dx="0" dy="1" />
+                  <feGaussianBlur stdDeviation="1" result="offset-blur" />
+                  <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse" />
+                  <feFlood floodColor="black" floodOpacity="0.1" />
+                  <feComposite in2="inverse" operator="in" result="shadow" />
+                  <feComposite in="shadow" in2="SourceGraphic" operator="over" />
+                </filter>
+              </defs>
+
+              {/* Background circle with inner shadow */}
+              <circle
+                  cx="50"
+                  cy="50"
+                  r="40"
+                  fill="none"
+                  stroke="#e5e7eb"
+                  strokeWidth="8"
+                  filter="url(#inner-shadow)"
+              />
+
+              {/* Progress circle */}
+              <circle
+                  cx="50"
+                  cy="50"
+                  r="40"
+                  fill="none"
+                  stroke={value >= 80 ? "#10b981" : value >= 60 ? "#f59e0b" : "#ef4444"}
+                  strokeWidth="8"
+                  strokeDasharray={circumference}
+                  strokeDashoffset={strokeDashoffset}
+                  strokeLinecap="round"
+                  transform="rotate(-90 50 50)"
+              />
+
+              {/* Percentage text */}
+              <text
+                  x="50"
+                  y="50"
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  fontSize="22"
+                  fontWeight="bold"
+                  className={colorClass}
+              >
+                {value}%
+              </text>
+            </svg>
+          </div>
+          <span className="mt-2 text-sm font-medium">{label}</span>
         </div>
-        <span className="mt-2 text-sm font-medium">{label}</span>
-      </div>
     );
+
   };
-  
+
   return (
     <div className="w-full p-4 flex flex-col gap-6">
       {/* Header with breadcrumb and actions */}
@@ -207,11 +223,8 @@ export const SessionDetail = ({ sessionId, onBack }: SessionDetailProps) => {
           
           {/* Circular progress indicators */}
           <div className="border rounded-lg p-6">
-            <div className="flex justify-center mb-6">
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
               <CircularProgress value={currentMetrics.overall} label="Overall" />
-            </div>
-            
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <CircularProgress value={currentMetrics.pace} label="Pace" />
               <CircularProgress value={currentMetrics.tone} label="Tone" />
               <CircularProgress value={currentMetrics.fillerWords} label="Filler Words" />
@@ -231,12 +244,12 @@ export const SessionDetail = ({ sessionId, onBack }: SessionDetailProps) => {
               <h3 className="font-bold">Insights & Recommendations</h3>
               <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pro Feature</span>
             </div>
-            
-            <div className="bg-gray-50 rounded-lg p-4 relative overflow-hidden">
+
+            <div className="bg-gray-50 rounded-lg p-4 relative my-10">
               <p className="text-sm text-gray-600">{currentMetrics.insights}</p>
-              
+
               {/* Blur overlay for free users */}
-              <div className="absolute inset-0 bg-white/70 backdrop-blur-sm flex items-center justify-center">
+              <div className="absolute inset-0 bg-white/25 backdrop-blur-sm flex items-center justify-center">
                 <div className="text-center p-4">
                   <p className="font-bold text-gray-800 mb-2">Unlock Detailed Insights</p>
                   <p className="text-sm text-gray-600 mb-4">Upgrade to Pro to access personalized recommendations</p>
