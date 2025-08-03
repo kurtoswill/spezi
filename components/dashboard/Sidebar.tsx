@@ -115,7 +115,7 @@ export const Sidebar = ({ setActiveTab, activeTab }: SidebarProps) => {
     // Show loading state if auth is still loading or we're fetching usage data
     if (authLoading || (loading && user)) {
         return (
-            <div className="flex flex-col w-64 h-screen justify-between border-r border-gray-300 items-center justify-center">
+            <div className="flex flex-col w-64 h-screen border-r border-gray-300 items-center justify-center">
                 <div className="flex flex-col items-center gap-4">
                     <Loader2 className="h-8 w-8 animate-spin text-gray-400" />
                     <p className="text-sm text-gray-500">Loading dashboard...</p>
@@ -126,9 +126,9 @@ export const Sidebar = ({ setActiveTab, activeTab }: SidebarProps) => {
 
     return (
         <div className="flex flex-col w-64 h-screen justify-between border-r border-gray-300">
-            <div className="flex flex-col gap-6 p-4 overflow-y-auto">
+            <div className="flex flex-col  p-4 overflow-y-auto">
                 {/* Spezi Logo */}
-                <div className="flex py-2">
+                <div className="flex py-2 mb-10">
                     <Image 
                         src="/logos/spezi-logo-2.png"
                         alt="Spezi Logo" 
