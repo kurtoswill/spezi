@@ -1,12 +1,11 @@
-import dynamic from 'next/dynamic';
-import { Suspense } from 'react';
 
-const VerifyEmailClient = dynamic(() => import('./VerifyEmailClient'), { ssr: false });
+import { Suspense } from 'react';
+import VerifyEmailClient from './VerifyEmailClient';
 
 export default function Page() {
-  return (
-      <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-        <VerifyEmailClient />
-      </Suspense>
-  );
+    return (
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+            <VerifyEmailClient />
+        </Suspense>
+    );
 }
