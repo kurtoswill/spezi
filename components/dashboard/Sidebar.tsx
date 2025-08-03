@@ -74,8 +74,15 @@ export const Sidebar = ({ setActiveTab, activeTab }: SidebarProps) => {
                 }
                 
                 // Parse the features JSON to get the usage limit
-                const features = tierData.features;
-                const usageLimit = features.usage_limit || 5;
+                let usageLimit = 5;
+                try {
+                    const features = tierData.features;
+                    if (features && typeof features === 'object') {
+                        usageLimit = features.usage_limit !== undefined ? features.usage_limit : 5;
+                    }
+                } catch (parseError) {
+                    console.error('Error parsing subscription features:', parseError);
+                }
                 
                 setUsageData({
                     usageCount: data.usage_count || 0,
@@ -121,9 +128,9 @@ export const Sidebar = ({ setActiveTab, activeTab }: SidebarProps) => {
         <div className="flex flex-col w-64 h-screen justify-between border-r border-gray-300">
             <div className="flex flex-col gap-6 p-4 overflow-y-auto">
                 {/* Spezi Logo */}
-                <div className="flex justify-center py-2">
+                <div className="flex py-2">
                     <Image 
-                        src="/images/logo.png" 
+                        src="/logos/spezi-logo-2.png"
                         alt="Spezi Logo" 
                         width={120} 
                         height={40}

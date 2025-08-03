@@ -1,35 +1,43 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
-import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs';
+// Updated middleware.ts - More lenient approach
+import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
-  // Create a Supabase client configured to use cookies
-  const supabase = createMiddlewareClient({ req: request, res: NextResponse.next() });
+  const res = NextResponse.next()
+  const supabase = createMiddlewareClient({ req: request, res })
 
-  // Refresh session if expired - required for Server Components
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
+  try {
+    // Try to get session, but don't fail if it's not immediately available
+    const { data: { session } } = await supabase.auth.getSession()
 
-  // If user has session and trying to access login, redirect to dashboard
-  if (session && request.nextUrl.pathname === '/login') {
-    const redirectUrl = new URL('/dashboard', request.url);
-    return NextResponse.redirect(redirectUrl);
+    const isLoginPage = request.nextUrl.pathname === '/login'
+    const isDashboardPage = request.nextUrl.pathname.startsWith('/(dashboard)')
+
+    // Only redirect FROM login TO (dashboard) if we're sure there's a session
+    if (session && isLoginPage) {
+      console.log('🛡️ Middleware: Redirecting authenticated user to (dashboard)')
+      return NextResponse.redirect(new URL('/(dashboard)', request.url))
+    }
+
+    // For (dashboard) pages, let them through and let client-side handle protection
+    // This prevents the middleware from incorrectly blocking authenticated users
+    if (isDashboardPage) {
+      console.log('🛡️ Middleware: Allowing (dashboard) access, client-side will handle auth check')
+      return res
+    }
+
+    return res
+
+  } catch (error) {
+    console.error('🛡️ Middleware: Error occurred, allowing request:', error)
+    return res
   }
-
-  // If no session and trying to access dashboard, redirect to login
-  if (!session && request.nextUrl.pathname.startsWith('/dashboard')) {
-    const redirectUrl = new URL('/login', request.url);
-    return NextResponse.redirect(redirectUrl);
-  }
-
-  return NextResponse.next();
 }
 
-// Specify which routes this middleware should run on
 export const config = {
   matcher: [
-    '/dashboard/:path*',
     '/login',
+    // Note: Only protecting login page in middleware, (dashboard) protection is client-side
   ],
-};
+}

@@ -263,8 +263,21 @@ EXECUTE FUNCTION update_updated_at_column();
 CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS TRIGGER AS $$
 BEGIN
+    -- Insert into users table
     INSERT INTO public.users (id, email, email_verified, created_at, updated_at)
     VALUES (NEW.id, NEW.email, NEW.email_confirmed_at IS NOT NULL, NEW.created_at, NEW.updated_at);
+    
+    -- Create default recording preferences for the new user
+    INSERT INTO public.user_recording_preferences (user_id, track_pacing, track_tone, track_filler_words, track_grammar)
+    VALUES (NEW.id, TRUE, TRUE, TRUE, TRUE);
+    
+    -- Create default integrations (all disconnected) for the new user
+    INSERT INTO public.user_integrations (user_id, service_name, is_connected)
+    VALUES 
+        (NEW.id, 'google_meet', FALSE),
+        (NEW.id, 'zoom', FALSE),
+        (NEW.id, 'ms_teams', FALSE);
+    
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;

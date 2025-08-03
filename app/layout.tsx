@@ -1,35 +1,37 @@
+// Clean version of app/layout.tsx
+
 import type { Metadata } from "next";
 import { Sora, Manrope } from "next/font/google";
 import "./globals.css";
-import { ClientLayout } from "./client-layout";
+import { AuthProvider } from "@/context/AuthContext"
 
 const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-  display: "swap",
+    subsets: ["latin"],
+    variable: "--font-manrope",
+    display: "swap",
 });
 
 const sora = Sora({
-  subsets: ["latin"],
-  variable: "--font-sora",
-  display: "swap",
+    subsets: ["latin"],
+    variable: "--font-sora",
+    display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Spezi",
-  description: "Speak English Professionally and Confidently",
+    title: "Spezi",
+    description: "Speak English Professionally and Confidently",
 };
 
 export default function RootLayout({
-                                     children,
+                                       children,
                                    }: Readonly<{ children: React.ReactNode }>) {
-  return (
-      <html lang="en" className={`${manrope.variable} ${sora.variable}`}>
-      <body className="font-sans antialiased text-[#232C4F] min-h-screen flex flex-col">
-      <ClientLayout>
-        {children}
-      </ClientLayout>
-      </body>
-      </html>
-  );
+    return (
+        <html lang="en" className={`${manrope.variable} ${sora.variable}`}>
+        <body className="font-sans antialiased text-[#232C4F] min-h-screen flex flex-col">
+        <AuthProvider>
+            {children}
+        </AuthProvider>
+        </body>
+        </html>
+    );
 }

@@ -25,8 +25,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        console.log('🔧 AuthContext: Initializing...')
+
         // Get initial session
         supabase.auth.getSession().then(({ data: { session } }) => {
+            console.log('🔧 AuthContext: Initial session check:', !!session)
+            console.log('🔧 AuthContext: Initial user:', session?.user?.email)
+
             setSession(session);
             setUser(session?.user ?? null);
             setLoading(false);
@@ -35,20 +40,27 @@ export function AuthProvider({ children }: AuthProviderProps) {
         // Listen for auth changes
         const { data: { subscription } } = supabase.auth.onAuthStateChange(
             async (event, session) => {
+                console.log('🔧 AuthContext: Auth state changed:', event)
+                console.log('🔧 AuthContext: New session:', !!session)
+                console.log('🔧 AuthContext: New user:', session?.user?.email)
+
                 setSession(session);
                 setUser(session?.user ?? null);
                 setLoading(false);
 
                 // Optional: Handle different auth events
                 if (event === 'SIGNED_IN') {
-                    console.log('User signed in:', session?.user?.email);
+                    console.log('✅ AuthContext: User signed in:', session?.user?.email);
                 } else if (event === 'SIGNED_OUT') {
-                    console.log('User signed out');
+                    console.log('👋 AuthContext: User signed out');
                 }
             }
         );
 
-        return () => subscription?.unsubscribe();
+        return () => {
+            console.log('🔧 AuthContext: Cleaning up subscription')
+            subscription?.unsubscribe()
+        };
     }, []);
 
     const signUp = async (email: string, password: string, firstName?: string, lastName?: string) => {
@@ -79,10 +91,19 @@ export function AuthProvider({ children }: AuthProviderProps) {
     };
 
     const signIn = async (email: string, password: string) => {
+        console.log('🔐 AuthContext: Starting signIn for:', email)
+
         const { data, error } = await supabase.auth.signInWithPassword({
             email,
             password,
         });
+
+        console.log('🔐 AuthContext: SignIn result:', {
+            success: !!data?.session,
+            error: !!error,
+            userEmail: data?.user?.email
+        })
+
         return { data, error };
     };
 

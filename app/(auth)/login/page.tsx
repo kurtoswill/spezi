@@ -25,6 +25,8 @@ export default function LoginPage() {
     // REMOVED: The problematic redirect code that was causing the error
     // The middleware will handle redirecting authenticated users
 
+    // Update your handleSubmit function in the login component
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         setLoading(true)
@@ -42,19 +44,30 @@ export default function LoginPage() {
         }
 
         try {
+            console.log('🔐 Starting sign in process...')
+
             const { data, error } = isSignUp
                 ? await signUp(email, password, firstName, lastName)
                 : await signIn(email, password)
 
+            console.log('🔐 Sign in response:', { data: !!data, error: !!error })
+
             if (error) {
+                console.log('❌ Sign in error:', error.message)
                 toast.error(error.message)
             } else if (isSignUp) {
                 toast.success('Check your email for confirmation link!')
             } else {
+                console.log('✅ Sign in successful!')
                 toast.success('Successfully signed in!')
+
+                // Since auth state is already updated (we can see it in the logs),
+                // we can redirect immediately
+                console.log('🚀 Redirecting to (dashboard)...')
                 router.push('/dashboard')
             }
         } catch (error) {
+            console.log('💥 Unexpected error:', error)
             toast.error('An unexpected error occurred')
         } finally {
             setLoading(false)

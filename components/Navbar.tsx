@@ -150,7 +150,7 @@ export const Navbar = () => {
                     >
                       <User size={16} />
                       <span className="max-w-32 truncate">
-                    {user.email}
+                    {user.role}
                   </span>
                     </Button>
 

@@ -97,7 +97,7 @@ export default function WaitlistPage() {
 
                             <div className="space-y-4">
                                 <Button asChild className="w-full bg-[#232C4F] hover:bg-[#232C4F]/90">
-                                    <Link href="/">Explore Spezi</Link>
+                                    <Link href="/public">Explore Spezi</Link>
                                 </Button>
 
                                 <Button asChild variant="outline" className="w-full">

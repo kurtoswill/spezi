@@ -3,7 +3,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
-import {AuthProvider} from "@/context/AuthContext";
 
 export function ClientLayout({
                                  children,
@@ -11,7 +10,7 @@ export function ClientLayout({
     children: React.ReactNode;
 }) {
     return (
-        <AuthProvider>
+        <>
             <Toaster position="top-center" />
             <Navbar />
             <main className="flex-1 w-full">
@@ -20,6 +19,6 @@ export function ClientLayout({
                 </div>
             </main>
             <Footer />
-        </AuthProvider>
+        </>
     );
 }
