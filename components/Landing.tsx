@@ -1,6 +1,7 @@
 import { Button } from './ui/button';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import Link from "next/link";
 
 export const Landing = ({ waitlistCount }: { waitlistCount: number | null }) => {
   return (
@@ -24,15 +25,15 @@ export const Landing = ({ waitlistCount }: { waitlistCount: number | null }) => 
                 className="px-4 py-3 text-sm sm:text-base font-semibold h-12 flex-1 sm:flex-initial sm:px-6"
                 variant="default"
             >
-              Download Extension
+              <Link href="/login"> Log in</Link>
             </Button>
-            <Button
-                className="px-4 py-3 text-sm sm:text-base font-semibold h-12 flex-1 sm:flex-initial sm:px-6 flex items-center justify-center gap-2"
-                variant="outline"
-            >
-              Watch Demo
-              <ArrowRight className="w-4 h-4" />
-            </Button>
+            {/*<Button*/}
+            {/*    className="px-4 py-3 text-sm sm:text-base font-semibold h-12 flex-1 sm:flex-initial sm:px-6 flex items-center justify-center gap-2"*/}
+            {/*    variant="outline"*/}
+            {/*>*/}
+            {/*  Watch Demo*/}
+            {/*  <ArrowRight className="w-4 h-4" />*/}
+            {/*</Button>*/}
           </div>
 
           {/* Waitlist count - Desktop */}

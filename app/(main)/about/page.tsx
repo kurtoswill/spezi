@@ -145,9 +145,8 @@ const Page = () => {
       role: "Developer",
       avatar: "/images/kurt.jpg",
       socialLinks: {
-        facebook: "https://facebook.com/kurt.mccarver",
-        instagram: "https://instagram.com/kurt.mccarver",
-        linkedin: "https://linkedin.com/in/kurt-mccarver",
+        facebook: "facebook.com/kurt.oswill.mccarver.2024",
+        linkedin: "linkedin.com/in/kurt-oswill/",
       },
     },
     {
@@ -155,19 +154,15 @@ const Page = () => {
       role: "Developer",
       avatar: "/images/niles.jpg",
       socialLinks: {
-        facebook: "https://facebook.com/niles.cabrera",
-        instagram: "https://instagram.com/niles.cabrera",
-        linkedin: "https://linkedin.com/in/niles-cabrera",
+        facebook: "https://www.facebook.com/nilespogi.cabrera",
       },
     },
     {
       name: "Gianfranco Lobaton",
       role: "Business Lead",
-      avatar: "/images/kurt.jpg",
+      avatar: "/images/giaco.jpg",
       socialLinks: {
-        facebook: "https://facebook.com/gianfranco.lobaton",
-        instagram: "https://instagram.com/gianfranco.lobaton",
-        linkedin: "https://linkedin.com/in/gianfranco-lobaton",
+        facebook: "https://www.facebook.com/Giacolob23",
       },
     },
     {
@@ -175,9 +170,8 @@ const Page = () => {
       role: "Researcher | Designer",
       avatar: "/images/verah.jpg",
       socialLinks: {
-        facebook: "https://facebook.com/verah.dulay",
-        instagram: "https://instagram.com/verah.dulay",
-        linkedin: "https://linkedin.com/in/verah-dulay",
+        facebook: "facebook.com/verah.00 ",
+        linkedin: "https://www.linkedin.com/in/verah-janae-dulay-589796197/",
       },
     },
     {
@@ -185,9 +179,8 @@ const Page = () => {
       role: "UI/UX Lead | Researcher",
       avatar: "/images/kazel.jpg",
       socialLinks: {
-        facebook: "https://facebook.com/kazel.tuazon",
-        instagram: "https://instagram.com/kazel.tuazon",
-        linkedin: "https://linkedin.com/in/kazel-tuazon",
+        facebook: "facebook.com/kazel.bananana",
+        linkedin: "https://www.linkedin.com/in/kazel-arwen/",
       },
     },
   ];

@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
+import Image from "next/image";
 
 const ExpandableText = ({ children, maxLength = 200 }: { children: string; maxLength?: number }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -79,9 +80,9 @@ export const Features = () => {
             </ExpandableText>
           </div>
 
-          <div className="w-full max-w-[520px] h-[200px] sm:h-[240px] md:h-[280px] lg:w-[520px] lg:h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
-            {/*Real-time feedback visualization*/}
-          </div>
+          <Image src="/images/meeting.png" alt="" width={1000} height={5000}
+            className="w-full max-w-[520px] h-[200px] sm:h-[240px] md:h-[280px] lg:w-[520px] lg:h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0"
+          />
         </div>
 
         {/* Post-meeting recaps */}
@@ -100,9 +101,9 @@ export const Features = () => {
             </ExpandableText>
           </div>
 
-          <div className="w-full max-w-[520px] h-[200px] sm:h-[240px] md:h-[280px] lg:w-[520px] lg:h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
-            {/*Post-meeting recaps visualization*/}
-          </div>
+          <Image src="/images/post-meeting.png" alt="" width={1000} height={5000}
+                 className="w-full max-w-[520px] h-[200px] sm:h-[240px] md:h-[280px] lg:w-[520px] lg:h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0"
+          />
         </div>
 
         {/* Trend tracking overtime */}
@@ -121,9 +122,9 @@ export const Features = () => {
             </ExpandableText>
           </div>
 
-          <div className="w-full max-w-[520px] h-[200px] sm:h-[240px] md:h-[280px] lg:w-[520px] lg:h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
-            {/*Trend tracking visualization*/}
-          </div>
+          <Image src="/images/patterns.png" alt="" width={1000} height={5000}
+                 className="w-full max-w-[520px] h-[200px] sm:h-[240px] md:h-[280px] lg:w-[520px] lg:h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0"
+          />
         </div>
 
         {/* Personalized improvement plans */}
@@ -142,9 +143,9 @@ export const Features = () => {
             </ExpandableText>
           </div>
 
-          <div className="w-full max-w-[520px] h-[200px] sm:h-[240px] md:h-[280px] lg:w-[520px] lg:h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0">
-            {/*Personalized improvement plans visualization*/}
-          </div>
+          <Image src="/images/tracking.png" alt="" width={1000} height={5000}
+                 className="w-full max-w-[520px] h-[200px] sm:h-[240px] md:h-[280px] lg:w-[520px] lg:h-[320px] bg-gradient-to-br from-[#4A5B8C] to-[#232C4F] rounded-xl flex-shrink-0"
+          />
         </div>
       </div>
     </div>

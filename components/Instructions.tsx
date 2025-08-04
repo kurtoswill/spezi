@@ -11,12 +11,12 @@ interface StepData {
 }
 
 const StepDataSet: StepData[] = [
-  { step: 1, text: "Install extension", image: "/images/placeholder2.png" },
-  { step: 2, text: "Start a call", image: "/images/placeholder.jpg" },
+  { step: 1, text: "Install extension", image: "/images/install.png" },
+  { step: 2, text: "Start a call", image: "/images/meeting.png" },
   {
     step: 3,
     text: "Receive real-time feedback",
-    image: "/images/placeholder2.png",
+    image: "/images/feedback.png",
   },
 ];
 
